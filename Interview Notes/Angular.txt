@@ -1,0 +1,316 @@
+angular 8 features:
+==> major anuglar feature is lazy loading. we can load our project modules.
+==> Bazel support − If your application uses several modules and libraries, Bazel concurrent builds helps to load faster in your application.
+
+Data biniding in angular:
+
+One-way data binding: we user interpolation operator for one way data binding. {{}}
+two-way-data binding: it is the combination of Property binding and Event binding. we use [(ngModel)] for two way data binding.
+
+Event binding: 
+    click, keyup, keydown etc.
+
+Property binding: []
+
+directives in angular: 
+
+    2) Structural Directives: used to manipulate DOM. 
+        ==> ex: *ngIf
+            <div *ngIf="false; else elseBlock">If Block</div>
+
+        ==> *ngFor: 
+            like let i = index, it has first, last, even, odd properties. 
+
+    <ng-template #elseBlock>
+        Else Block
+    </ng-template>
+
+    3) Attribute Directives: attribute directives changes the look of the  behaviour of the DOM. ngClass, ngStyle.
+
+
+
+Pipes:
+    ==> It helps to transform data and manage data within interpolation.
+    ==> use @Pipe({name: 'PipeName'}) decorator.
+    ==> implement PipeTransform in pipe class.  MultiplyPipe implements PipeTransform
+    ==> override transform(paramater)
+    Q.1) What is pure and impure pipe?
+    ==> A pure pipe is only called when Angular detects a change in the value or the parameters passed to a pipe. 
+    ==> An impure pipe is called for every change detection cycle no matter whether the value or parameter(s) changes.
+
+
+Async Pipe:
+
+    https://debugmode.net/2019/10/24/when-to-use-the-subscribe-method-or-async-pipe-in-angular/
+
+
+
+Forms in angular: 
+    1) Reactive forms: 
+        ==> create the form in the component class
+        ==> well suited for complex scenarios. 
+        ==> dynamic fields. ==> formArray.
+        ==> custom validation.  ==> creating customValidator.ts
+        ==> unit test.
+
+        steps: 
+        1) define form in HTML template: 
+            ==> <form [formGroup] = "form_name_defined_in_class">
+            ==> use formControlName = "form_controller"
+
+            formGroup: used to group all form controllers.
+            formController: used for specific field.
+
+
+    2) Template-driven forms: 
+        ==> creating the entire form in the template.
+        ==> create form with reference to form and ngForm :  #userForm = "ngForm"
+        ==> define ngModel in every input field to add it in form:   <input type="text" name="email" class="form-control" placeholder="Email" ngModel>
+        ==> if want to add address with street, pincode etc. we can use ngModelGroup="address".
+        ==> if want two way binding user [(ngModel)] = "binded_ob.key"
+        ==> to get form control details add reference variable ==> <input type="text" name="email" #email="ngModel" class="form-control" [class.is-invalid]="email.invalid" placeholder="Email" [(ngModel)]="userData.email" required>
+        ==> handle error: 
+            --> <div *ngIf="email.errors.required" class="text-danger"> Invalid email</div>
+            --> <div *ngIf="email.invalid" class="text-danger"> Invalid email</div>
+
+        states of the form:
+
+        1) valid:
+        2) invalid:
+        3) pristine: default its false, changes to true when field get modified.
+        4) tocuhed: 
+        5) untouched: 
+        6) 
+
+Observables: 
+    ==> Angular's HttpClient returns observables from HTTP method calls.
+    ==> The AsyncPipe subscribes to an observable or promise and returns the latest value it has emitted
+    ==> observables are cancellable.
+    ==> can use RxJs operators.
+    ==> Are lazy: will not exicuete until subscribe.
+
+Promises: 
+    ==> not cancellable.
+    ==> can't use RxJs operators.
+    ==> exicute immediatly.
+
+    NOTE: Both observables and promises help us work with asynchronous functionality in JavaScript.
+
+RxJs Operators:
+    ==> The operators are very important components of the Rxjs library.
+    ==> They are functions that take  observable as input and transform it into a new observable and return it
+    ==> We use them to manipulate the observable data stream.
+
+    1) Using pipe to combine operators
+        -> The pipe method accepts operators such as filter, map, as arguments.
+        -> tap to print or debug observer values.
+        -> filter to filter values 
+        -> map to iterate over all objects
+        -> from create observable. pass array of objects to it.
+        -> 
+
+difference between constructor and onInit() 
+
+constructor: 
+    --> get exicuted when class instantiated.
+    --> used for initialization of class members
+    --> also used to inject dependancies.
+
+
+onInit:
+    --> its an life cycle hook of angular.
+
+angular lifecycle hooks:  
+    1) ngOnChanges(changes: SimpleChanges) very first it will check for data bound properties.
+    2) ngOnInit(): get call after component initialization. ex: use of @ViewChild
+    3) ngDoCheck(): ngDoCheck check for changes. with reference and withour reference.
+    4) ngAfterContentInit(): will get called once View is initialized.
+    5) 
+    6) 
+    7) 
+    8) ngOnDestroy():
+
+@ViewChild: used to access templateRef:
+
+
+angular guards:
+
+1) canActivate: if returns true then only we can access component.
+2) canActivateChild: can canActivateChild used to restrict child routes.
+3) canLoad: it restrict the lazy loading modules.
+4) canDeactivate: before changing route it will get exicuted.
+
+
+
+project description:
+
+    ==> E-commerce: 
+        --> it was about to get near stores where I can get vegetables, fruits etc. or users can search for location and get stores near to the location.
+        --> also there was functionalities like user profile, all available products. if user selects product it will show all the info
+            available protains in that fruit. in which nearest store it is available. rate to store.
+        --> technologies used in project:
+            ==> angular/ionic: version-9
+            ==> libraries: leaflet.
+
+    ==> Banking :
+        --> in the bussiness if user want to know about credit score of the another organization. he can login to portal and will first search for 
+            organization and he has different kind of reports. 
+        --> user can search for report and add it to cart. 
+        --> prepaid or postpaid was getting from parent project.
+        --> there is list of alerts for user can subscribe. like litigation alert. payment service alert.
+        --> if he subscribes he will get daily alerts.
+        --> technologies:
+            --> ag-grid:
+
+    ==> Charging stations:
+        --> technologies: monolothic application using spring boot.
+
+        ==> it was about storing all the information of the charging session. 
+        ==> creating operators and storing its data.
+        ==> users can register using mobile number. and will get OTP to validate.
+
+        ==> technology: angular and java 
+            1) java: created Rest API'scenarios
+            2) angular: ngx-charts, echarts
+
+
+
+angular Interview Questions:
+
+1) what are the feature of angular 8 and latest angular version.
+    ==> angular 8 feature: 
+        1) lazy loading is the feature that we got in angular verison 8.
+        2) bazel support: which load angular application fastetr.
+        angular 14) 
+        1) standalone components: in angular 14 we can create standalone components. just make standalone: true and import module in it 
+        2) type forms: we can create type forms using type with formController. ex: email : new formController<string>('');
+2) so can explain the angular life cycle hooks?
+    These are the hooks for components or directives, in call order:
+
+        1) constructor()
+        2) OnChanges
+        3) OnInit
+        4) DoCheck
+        5) OnDestroy
+    
+    And these are the hooks for a component’s children components:
+
+        1) AfterContentInit: called when component content initialized.
+        2) AfterContentChecked: called when component content updated.
+        3) AfterViewInit: called when component and child component created and fully initialized.
+        4) AfterViewChecked
+
+3) so can explain the different types of pipes?
+    1) pure pipes:
+        ==> Pipe will execute if it detects a change in the user’s object reference
+    2) impure pipes: 
+        ==> Pipe will execute if it detects a change in the user’s object properties.
+
+4) different type of binding?
+    ==> property binding: using [] brackets we can bind properties.
+    ==> attribute binding: [attr.attribute_name] ex: disabled is attribute of input field: 
+    ==> event biding: using rounded brackets we can bind events like: (click),(blur)
+    ==> 
+
+5) what is router-outlet? ==> whenever navigation happen, compoenent will be loaded at that location.
+    practically I never used but we can use multiple named routlet 
+6) can you explain ngModule? ==> declaration:[], imports: [], exports: [], providers: [], bootstrap[]
+7) what is use of bootstrap in ngModule? ==> 
+8) can you explain lazy loading in angular.
+9) what is difference between navigate and navigateUrl?
+    ==> this.router.navigate(['about']);
+    => 
+10) how did you authorize user?
+11) what is interceptors in angular? ==> interceptors are used to attach token to the every request.
+12) why do have route guards? canActive: for modules, canActivate: for routes, canActivateChild: for child routes. CanDeactivate: it will get exicuted before route change.
+13) where did you handle session time and session variable.
+14) can you explain the shared module? ==> like use of all material module.
+15) you know shared library?
+16) can explaind the httpClient module?
+17) are worked on any flex module.
+18) which recent framework you work on angular material or bootstrap.
+19) how to work with angular material?
+20) how to work with bootstrap in angular?
+21) are you worked on tab based designs?
+22) dialog box? how did call you dialog box and will show content? ==> inject MatDialog: and call open method with dialog component name.musing matDialogRed we can close.
+23) are worked on dashboard kind of things? like piechart, barchart
+24) how grid pagingation or scrolling loading
+25) can you explain *ngFor?
+26) how did you show the image?
+27) what is difference between package.json and package-lock.json
+==> all dependancies are mentioned in package.json and what dependancies are downloaded is mentioned in package-lock.json.
+28) how to migrate from one angular version to another version.
+29) how did you update angular CLI? commands?
+30) what is interface in typescript?
+31) can you explain different type of for loops?
+32) how did you convert string to integer in typescript?
+34) what is enumeration in typescript?
+35) what is the use of any data type?
+36) how did you build and deploy application?
+37) what ng build do? ==> what ever rules mentioned in pollyfills for typescript. it convert code to JavaScript.
+38) have you worked on agile methodology?
+39) have faced any performance issues or any challenges in project?
+40) arrow function in typescript?
+41) what is observables?
+    ==> to handle asynchronous task we use observables.
+42) have worked on unit testing like karma?
+43) how did you allow to use multiple languages? ngx-translate library
+44) how to change themes? we can do using angular?
+
+my question?
+1) what are the technologies you are the using for this project?
+2) you suggest me any of the area of improvement for me?
+
+Q1) if internet connection lost in angular
+Q2) reasons of page loading slowly in UI.
+Q3) difference between formGroup and formArray
+
+html : what ar the box properties.
+        inline-box: 
+        what is div and span 
+        what is difference between let and var and const 
+        what is the use of cookies.
+
+<audio> and <video> 
+
+what is view encapsulation:
+==> use encapsulation property in @compoenent decorator: 
+    1) default it will by viewEncapsulation.Emulated: do not combine css.
+                          viewEncapsulation.None: combine css.
+1) What is the Box model in CSS? Which CSS properties are a part of it?
+
+
+1) what box modal, 
+2) flex and grid, 
+3) responsive design, 
+4) pipe, 
+5) form module, 
+6) rxjs, 
+7) merge map, 
+8) observalbe and subject, 
+9) what is design pattern and use,  
+10) interceptor.
+11) what is canvas element in html 
+12) what are the selectors in the html.
+
+1) create custom runtime exceptions
+2) how to get hashcode of object in spring boot
+3) difference between @component and @Bean
+4) object is equal by equals method then what about hashcode
+5) why observables are not cancellable
+6) have you override hashcode and equal methods of collections 
+7) are static variables accessible in non static block and why viceversa
+8) constant in java. 
+9) print even and odd numbers using 2 threads.
+
+
+
+
+Javascript:
+
+ hoisting: 
+    --> declarations are moved to top of the scope.
+    -->  To avoid hoisting, you can run javascript in strict mode by using “use strict” on top of the code:
+
+Q.1) Difference between “ == “ and “ === “ operators.
+Q.2) Difference between var and let keyword in javascript: var has a function scope and let has a block scope.

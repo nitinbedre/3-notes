@@ -1,0 +1,2606 @@
+CORE JAVA:
+
+Java 1.8 features:
+
+1) Lambda Experssions: We can work with Funtional Interfaces. to meet requirement in less code.
+2) Functional Interfaces: 
+3) Stream API: to work with collection objects.
+
+Java 14 features.
+1) Switch Expressions:
+2) Text Blocks: it makes code readable. use operator(""") 
+3) NullPointerExceptions: it tells story where NullPointerException occured.
+4) Foreign Memory Access API: 
+
+-----------------------------------------------------------------------------------------------
+BASICS:
+
+what is java?
+=> java is open source object oriented programming language.
+
+----------------------------------------------------------------------------------------
+
+INTRODUCTION TO JAVA:
+
+
+1) WHO DEVOLOPED JAVA:
+=> JAVA IS DEVOLOPED AT SUN MICROSYSTEMS BY " JAMES GOSLING " AND HIS TEAM.
+
+----------------------------------------------------------------------------------------
+
+2) WHAT ARE THE CATEGORIES OF THE JAVA?
+=> JAVA IS CATEGORISED INTO THREE PARTS:
+1) JAVA STANDERED EDITION(J2SE) (CURRENT VERSION JAVA SE13)
+2) JAVA ENTERPRISED EDITION (J2EE)( CURRENT VERSION 1.5)
+3) JAVA MICRO EDITION(OUTDATED)
+
+---------------------------------------------------------------------------------------
+
+3) WHAT ARE THE FEATURES OF JAVA?
+=>
+1) JAVA IS SIMPLE:
+=> JAVA IS SIMPLE PROGRAMMING LANGUAGE BECAUSE THE DIFFICULT CONCEPTS OF THE C A
+ND C++ ARE OMMITED IN THE JAVA.
+LIKE : POINTER
+=> AND REMAINS THE SAME SYNTAX AS C AND C++
+
+2)JAVA IS PLATFORM INDEPENDANT:
+=> JAVA IS PLATFORM INDEPENDANT LANGUAGE . WRITE ONCE AND RUN ANYWHERE
+=> ONCE COMPILED FILE CAN RUN ON ANY OPERATING SYSTEM.
+=> THERE IS NO NEED TO COMPILE FILE ONCE AGAIN.
+
+3) JAVA IS PORTABLE :
+=> IF THE PROGRAMS YEILDS THE SAME RESULT ON EVERY MACHINE , THAT PROGRAM IS CALL
+ED AS THE PORTABLE.
+
+4) JAVA IS ROBUST:
+=> ROBUST MEANS STRONG . JAVA PROGRAM ARE STRONG THEY DONT CRASH EASILY LIKE C A
+ND C++ PROGRAMS.
+=> BECAUSE JAVA OMMITED THE POINTER CONCEPT THERE FORE THERE IS THE NO MISMATCHI
+NG OF THE MEMORY.
+=> AND ALSO JAVA PROGRAMS ARE STRONG BECAUSE OF EXELLENT INBUILT EXCEPTION HAN
+DLING .
+=> BECAUSE OF EXCEPTION HANDLING JAVA PROGRAMS TERMINATED NORMALLY.
+
+5) secure :
+=> java is secure programming language because it provides automatic memory management
+=> java provides automatic garbage collection
+=> java provides bound checking on array.
+
+thats why java is secured programming language.
+
+6) JAVA HAS OBJECT ORIENTED FEATURES:
+
+it provides the flexibility and reusability.
+
+=> class
+=> object
+=> interface
+=> polymorohism
+=> abstraction
+=> inheritance
+=> encapsulation
+
+7) high performance:
+java has JIT(just in time compiler) it encreses the exicution speed of java program.
+
+----------------------------------------------------------------------------------------
+
+4) what is jdk?
+=> JDK(Java Devolopement Kit)
+=> jdk is nothing but the collection of all programs which are required to devolope debbug and exicute java applicat
+ions
+=> java devolopers needs JDK for devolope java applications
+
+----------------------------------------------------------------------------------------
+
+5) what is JRE?
+=> JRE (Java Runtime Enviroment)
+=> JRE can only exicuted the bytecode
+=> JRE needs to exicute java application
+----------------------------------------------------------------------------------------
+
+6) what is JVM?
+=> JVM(Java Virtual Machine)
+=> JVM is part of the JDK . when we are going to install JDK, JVM will automatically installed in your System.
+=> also we can install it mannually , according to which version we want.
+=> JVM is the runtime engine of the java platform.
+=> JVM convert bytecode(file created using any language) into machine language and exicute it.
+
+JVM internally contains 3 parts:
+
+A) class loader subsystem:
+it loads the bytecode file on the jvm.
+while loading bytecode files class loader uses
+3 componants
+
+1) loader:
+loader loads the required files into the current runing program.
+to load the file it uses three different loaders
+
+1) Bootstrap loader:
+
+=> it load the required files in the current exicuting program from java library.
+ex: files from rt.jar folder.
+
+2) extension loader:
+
+=> it load the required files from the exe.jar file
+
+3) application class loader:
+
+=> it loads the files from the class path of the enviroment.
+
+2) linker:
+linker will link all required files into the current exicuting program where as they are needed.
+
+internally it uses the following 3 componants:
+
+1) verify:
+it check the required file and loaded files are same or not
+this process is known as verification process.
+
+2) prepare:
+prepare componants to perform decoding process.
+(finding how many variables, methods are there)
+
+3) resolve: it finds the programming componant belonging to the class or
+object based on the static keyword.
+
+
+
+
+3) initiate:
+in this process memory will be generated and class is loaded for exicution.
+
+
+
+B) runtime data area :
+
+it divided into following blocks
+
+1) method area:
+
+=>memory area where class is loaded is known as method area.
+
+2) heap area:
+
+=>memory block where objects are creared this known as heap area.
+
+3) java stack area:
+
+=> all methods are exicuted in the java stack area.
+
+4) program counter register area:
+
+=> here next instruction address is stored in the program counter register area.
+
+5) native method stack area:
+
+=> all java native methods are exicuted.
+
+Native methods are usually used to interface with system calls or libraries written in other programming langu
+ages. Ideally, not at all. In reality some functionality is not available in Java and you have to call some C code. The
+methods are implemented in C code
+
+3) exicution engine:
+
+=> it controll the all exicution of the JVM.
+
+---------------------------------------------------------------------------------------
+
+7) what is most important feature of java?
+=> java is platform independant language.
+
+---------------------------------------------------------------------------------------
+
+8)what is pointer and does java support to pointer?
+=> pointer is the variable that store the memory address of another variable.
+or
+it is the reference to handle memory location.
+
+=> java dosent supports pointer.
+
+---------------------------------------------------------------------------------------
+
+9)what is JIT compiler?
+=> Just In Time compiler is the part of JVM . which increases the exicution speed of java program.
+
+---------------------------------------------------------------------------------------
+10) Naming convension in java
+=>
+packages:
+=> the package must be in lowercase letter.
+=> it must start with organizatoin name.
+Ex: com.youtube.code;
+
+classes and interface:
+
+=> starting letter of the every word must be capital
+
+variables and methods:
+
+=> first word should be in lowercase and 2nd word and onwords the starting letter must be capital
+
+11) data types in the java
+=> 1) primitive datatypes:
+=> used to define the size and type of the variable.
+
+1) byte
+2) short
+3) int
+4) long
+5) float
+6) double
+7) char
+8) boolean
+9) void
+
+2) non-primitive datatypes:
+
+1) class
+2) interface
+3) array
+4) string
+
+------------------------------------------------------------------------------------------------
+
+12) type casting in java
+
+=> there are two types if the type casting in the java
+1) implicit type casting(widening):
+=> converting smaller type to the larger type. there is the no loss or overflow of the data
+=>
+byte --> short --> int --> long --> float --> double
+
+
+Ex:
+
+class Overview
+{
+public static void main(String[] args)
+{
+
+int x = 10;
+System.out.println(x);
+float f = x;
+System.out.println(f);
+double d = x;
+System.out.println(d);
+}
+}
+
+2) explicit conversion(narrowing):
+=> converting larger type to smaller type. there are the possibilities of the loss data.
+=> it done by the programmer.
+=>
+double --> float --> long --> int --> short --> byte
+
+Ex:
+
+class Overview
+{
+public static void main(String[] args)
+{
+
+double x = 10;
+System.out.println(x);
+float f = (float)x;
+System.out.println(f);
+int d = (int)x;
+System.out.println(d);
+}
+}
+------------------------------------------------------------------------------------------------
+13) what is literals?
+=> literals is the constant value assined to the variable is called as literal.
+ex: 1) int c = 10 ;
+2) boolean b = true;
+3) int x = null;
+
+===================================================================================
+====
+
+2. BASIC PROGRAMMING ELEMENTS: Qc(9)
+
+
+1) basic programming elements of java?
+=>
+
+1)package : used to group related classes. 
+2)class
+3)interface
+4)enum
+5)method
+6)variable
+
+1) package:
+=>
+------------------------------------------------------------------------------------------------
+
+
+2) constructor in java.
+=> constructor is the special method which has the same name as the class name.
+=> it dosent have an return type .
+=> constructor exicuted automatically when object is created.
+=> its main purpose to initialize the data members of the object.
+=> it can be overloaded.
+there are 3 types of constructors in java.
+=> default constructor.
+=> 0-parameterized constructor: with programmer logic.
+=> parameterized constructor
+
+------------------------------------------------------------------------------------------------
+3) method overloading in java.
+=> class have multiple methods with same name and different signature is called as method overloading.
+=> priority for overloaded methods
+1) exact match
+2) widening: if exact match is not there then we have to go for widening
+3) search for wrapper classes.
+4) if non of the above is exicuted then variable argument method is exicuted.
+
+
+Ex:
+
+class Overview
+{
+
+    static int add(int a , int b)
+    {
+        System.out.println("exact match is exicuted...");
+        return a+b;
+    }
+
+    static double add(double a , double b)
+    {
+        System.out.println("widening is exicuted....");
+        return a+b;
+    }
+
+    static int add(Integer a , Integer b)
+    {
+        System.out.println("searched for reference classes..");
+        return a+b;
+    }
+
+static int add(int ...arr)
+{
+System.out.println("variable argument method has been exicuted....");
+return 1;
+}
+public static void main(String[] args)
+{
+int a = add(10 , 20);
+double c = add(10.00 , 20.00);
+int n = add(new Integer(10) , new Integer(20));
+int e = add(10,20,30);
+//System.out.println(c);
+}
+}
+f2784760d82b
+------------------------------------------------------------------------------------------------
+
+4) static and non-static in java.
+=>
+=>
+static:
+
+=> It can be used with variables, methods, blocks and nested classes.
+=> static data members allocates memory while loading the class.
+
+1) data members:
+=> static datamembers can be shared by all objects.
+2) method:
+=> static method can called using class name.
+=> if we are calling static method in the same class no need use class name , we can call directly.
+=> if class dont have any data member then it is recommanded to write all methods as static.
+=> if class has datamembers but method is not using any datamember
+then it is recommanded to write method as static.
+3) block:
+=> static block are exicuted during loading of the class.
+
+non-static:
+=> its also called as instance members.
+1)instance data members:
+=> data members belonging to the object.
+=> for every object there is the new copy of the datamember.
+=> when object is destroyed all data memberes are also destroy.
+
+2) instance method:
+=> we have to call these methods using object.
+
+3) instance block:
+=> instance block is exicuted while creation of the object.
+=> it exicuted before constructor.
+
+
+During loading class:
+
+=> it loads the static data members. and initialize it from top to bottom.
+=> exicutes static blocks
+=> exicute static main method.
+--> starts the exicution of main method statements from top to bottom
+=> instance member are initialized.
+=> while creating object instance block will be exicuted.
+=> after creating object constructor will be exicuted.
+
+-------------------------------------------------------------------------------------------------
+
+5) Access specifiers:
+
+=> there are 4 access specifiers. which can be apply on the
+1) public
+2) private
+3) protected
+4) default
+
+
+
+Access Modifiers:
+using access specifier we can control the accessibility of the elements(data members, methods).
+
+1) private: Data members and mehods are not accessible directly, outside of the class.
+=> data members can be accessed using getter method
+=> data members can be set or values assigned using setter method.
+
+Ex: 
+
+class Student {
+    private int id;
+    
+    private int getId() {  // access private elements using getters
+        return this.id;
+    }
+}
+class HelloWorld {
+    public static void main(String[] args) {
+        Student obj = new Student();
+        System.out.println("Hello, World!"+ obj.getId());
+        // System.out.println("Hello, World!"+Student.id);
+    }
+}
+
+2) public : data members and methods are accessible from anywhere.
+
+3) default: by default elements have default access specifier.
+=> elements are package friendly.
+=> in package this are accessible to every where.
+
+3) protected:
+its elements are package friendlly.
+=> in the same package elemens are accessible everywhere.
+=> also protectd elements are accessible to the its child class.
+child class can use protected elments of the parent class
+and they will be used by creating object of the child class.
+(if child class is outside of the package then also its accessible).
+
+------------------------------------------------------------------------------------------------
+Relation between the objects:
+
+1) HAS-A:
+
+=>In Java, a Has-A relationship is also known as composition. It is also used for code reusability in Java. In Java, a
+Has-A relationship simply means that an instance of one class has a reference to an instance of another class or an ot
+her instance of the same class. For example, a car has an engine, a dog has a tail and so on.
+
+2) IS-A:
+
+
+=> In Java, an Is-A relationship depends on inheritance. Further inheritance is of two types, class inheritance and int
+erface inheritance. It is used for code reusability in Java. For example, a Potato is a vegetable, a Bus is a vehicle, a B
+ulb is an electronic device and so on. One of the properties of inheritance is that inheritance is unidirectional in natur
+e. Like we can say that a house is a building. But not all buildings are houses. We can easily determine an Is-A relati
+onship in Java
+
+3) USES-A:
+
+=> using class reference as a parameter of method is known as USES-A relationship
+ex:
+1) void setName(String name)
+2) void setAddress(Address address)
+-------------------------------------------------------------------------------------------------
+Features of Object Oriented Programming:
+
+needed data:
+
+1) basic programming elements of java?
+=>
+
+1)package
+2)class
+3)interface
+4)enum
+5)method
+6)variable
+
+
+Package:
+
+1) what is package ?
+=> package is the collection of the relative classes and interfaces and enums.
+
+2) what is the need of the package>?
+=> java api is the collection of the packages. using java we can create api or java libraries.
+
+3) command to create package
+=> javac -d . ClassName
+-d . = current directory.
+
+4) rules to devolope package
+=> package name should be in the lowercase letters
+=> package name should be reverse order of domain name
+Ex: org.geeksforgeek.practice
+
+
+-------------------------------------------------------------------------------------------------
+
+class:
+
+
+types of the classes:
+=> abstract class:
+=> concreate class:
+=> inner class:
+=> final class:
+=> POJO class:
+
+=> class is the blueprint or structure or template of an object.
+=> class is the collection of an datamembers(attribute or properties) and member functions
+(behaviour or action).
+=> we have to create object when we have to implement blueprint or idea
+=> class is the user defined data type.
+
+Ex:
+class Student
+{
+String name;
+int rollNo;
+String address; // properties
+int total;
+
+public per(int total)
+{
+double per = total/3; // action
+}
+
+}
+
+types of the classes:
+
+=> abstract class
+
+-> abstract keyword is used to create an abstract class in java.
+-> Abstract class in java can’t be instantiated.
+-> abstraction is the process of hiding certain details and showing only essential information to the user. .
+->We can use abstract keyword to create an abstract method, an abstract method doesn’t have body.
+->If a class have abstract methods, then the class should also be abstract using abstract keyword, else it will not co
+mpile.
+->It’s not necessary for an abstract class to have abstract method. We can mark a class as abstract even if it doesn’t
+declare any abstract methods.
+->If abstract class doesn’t have any method implementation, its better to use interface because java doesn’t support
+multiple class inheritance.
+->The subclass of abstract class in java must implement all the abstract methods unless the subclass is also an abstr
+act class.
+->All the methods in an interface are implicitly abstract unless the interface methods are static or default. Static me
+thods and default methods in interfaces are added in Java 8, for more details read Java 8 interface changes.
+->Java Abstract class can implement interfaces without even providing the implementation of interface methods.
+->Java Abstract class is used to provide common method implementation to all the subclasses or to provide default
+implementation.
+->We can run abstract class in java like any other class if it has main() method.
+
+
+Interface:
+
+Q: what is interface?
+=> An interface is a completely "abstract class".
+=> Interfaces specify what a class must do and not how.
+=> It is a collection of abstract methods
+=> it is the set of rules or regulations.
+
+Q: Why do we use interface ?
+=> It is used to achieve total abstraction.
+=> Since java does not support multiple inheritance in case of class, but by using interface it can achieve multiple i
+nheritance .
+=> It is also used to achieve loose coupling.
+=> Interfaces are used to implement abstraction. So the question arises why use interfaces When we have abstract
+classes?
+=> The reason is, abstract classes may contain non-final variables, whereas variables in interface are final, public a
+nd static.
+
+types of interfaces: 
+1) Functional Interface:
+    ==> the interface contains only one abstract method is called as Functional Interface.
+    ==> Ex: 1) Runnable: it contains only run() method. 2) callable: it contains only call Method.
+
+2) Marker Interface:
+    ==> the interface does not contains any method, fields are called as Marker Interface.
+    ==> Ex: 1) Serializable  2) Cloneable
+
+    use of marker interface: 
+    ==> Marker interface is used as a tag that inform the Java compiler by a message so that it can add some special behavior to the class implementing it.
+
+1) Clonable: Clonable Interface generates replica (copy) of an object with different name. 
+            ==> Ex: Person p = new Person; Person p2 = (Person) p1.clonse(); NOTE: Person Implements Clonable.
+
+2) Serializable: 
+        ==> If a class implements the Serializable interface, we can serialize or deserialize the state of an object of that class.
+        Serialization: Serialization (converting an object into byte stream) is a mechanism in which object state is read from the memory and written into a file or database.
+        Deserialization: Deserialization (converting byte stream into an object) is the opposite of serialization means that object state reading from a file or database and written back into memory is called deserialization of object.
+
+=> concrete class
+
+Q: why java doesn't support multiple inheritance?
+=> Multiple inheritance is not supported because it leads to deadly diamond problem.
+=> its make confusion thats why to avoid ambiguty error java dosent support multiple inheritance
+
+
+=> final class:
+-> we can create final class.
+-> if class is final we cant extends it.
+NOTE: if class is not final and properties are final then that properties can be inherited.
+
+class FinalTesting extends FinalTesting1{
+
+    public static void main(String[] args) {
+        FinalTesting obj = new FinalTesting();
+        System.out.println("parent class member finalVar1"+ obj.finalVar1);
+        System.out.println("parent class member finalVar2"+ obj.finalVar2);
+        obj.finalClassMethod();
+    }
+}
+
+
+class FinalTesting1 {
+    final int finalVar1 = 10;
+    final int finalVar2 = 20;
+
+    final void finalClassMethod() {
+        System.out.println("final class method");
+    }
+}
+
+=> inner class
+1) static inner class:
+-> it is declared inside the class and outside the method.
+2) member inner class:
+-> it is declared inside the class and outside the method.
+3) local inner class
+-> it is declared inside the method
+4) anonymous inner class:
+-> the class does not have any name.
+------------------------------------------------------------------------------------------------
+
+object:
+
+=> object is the real word entity.
+=> object is the instance of the class.
+instance: memory allocated for the data members of the class.
+
+Student s = new Student();
+--------- -------------
+ref instance or object
+
+object has three properties:
+1) state(data members):
+2) identity: distinguish object from other objects is the identity of an object.
+3) behaviour(member functions):
+Ex: Dog object dog , dog1:
+=> states of the dog: 1) colour 2) height 3) weight ...
+=> behaviour of the dog: 1) eating 2) running .....
+=> dog and dog1 has different identity.
+NOTE:
+=> OBJECT WITHOUT NAME IS CALLED AS ANNONYMOUS OBJECT.
+
+-------------------------------------------------------------------------------------------------
+
+enum:
+
+=> The Enum in Java is a data type which contains set of constants.
+=> it has its own package. java.lang.Enum
+=> it is typesafe
+=>
+
+
+Ex:
+public enum Enum1
+{
+SUNDAY,MONDAY;
+static
+{
+System.out.println("hii");
+}
+public static void main(String[] args) {
+
+for(Enum1 e : Enum1.values())
+{
+System.out.println(e);
+}
+
+Enum1 e1[] = Enum1.values();
+for(Enum1 e : e1)
+{
+System.out.println(e);
+}
+}
+}
+
+
+NOTE:
+above code automatically converted like
+
+
+public final class Enum1 extends java.lang.Enum<Enum1> {
+public static final Enum1 SUNDAY;
+public static final Enum1 MONDAY;
+public static Enum1[] values();
+public static Enum1 valueOf(java.lang.String);
+public static void main(java.lang.String[]);
+static {};
+}
+
+Q: what difference between class and enum?
+=> enum is same like class but its constants are public , static and final
+these cannot be overriden.
+
+=> An enum cannot be used to create objects, and it cannot extend other classes (but it can implement interfaces).
+
+Q: Why And When To Use Enums?
+=>Use enums when you have values that you know aren't going to change, like month days, days,colors, deck of c
+ards, etc.
+
+
+
+-------------------------------------------------------------------------------------------------
+OOPs concept:
+=> its methodology methodology by which data and operations are organized on a structered way to solve proble
+m.
+
+=> There are 4 major principles that make an language Object Oriented.
+These are:
+1) Encapsulation
+2) Data Abstraction
+3) Polymorphism
+4) Inheritance
+
+1) Encapsulation:
+
+=> Encapsulation in Java is a process of wrapping code and data together into a single unit, for example, a capsule
+which is mixed of several medicines.
+=> We can create a fully encapsulated class in Java by making all the data members of the class private. Now we ca
+n use setter and getter methods to set and get the data in it.
+=> The Java Bean class is the example of a fully encapsulated class.
+
+2) Abstraction:
+
+=> Data abstraction is the process of hiding certain details and showing only essential information to the user.
+=> Abstraction can be achieved with either abstract classes or interfaces
+
+3) Polymorphism:
+
+=> polymorphism means many forms.
+=> There are two types of polymorphism in Java:
+1) compile-time polymorphism (overloading / static binding):
+
+=> At compile time, Java knows which method to invoke by checking the method signatures. So, this is called co
+mpile time polymorphism or static binding.
+=>
+2) runtime polymorphism(overriding / dinamic binding ):
+=> at the run time compiler decides which method we have to exicute
+class Vehicle{
+
+public void move(){
+
+System.out.println(“Vehicles can move!!”);
+
+}
+
+}
+
+class MotorBike extends Vehicle{
+
+public void move(){
+
+System.out.println(“MotorBike can move and accelerate too!!”);
+
+}
+
+}
+
+class Test{
+
+public static void main(String[] args){
+
+Vehicle vh=new MotorBike();
+
+vh.move(); // prints MotorBike can move and accelerate too!!
+
+vh=new Vehicle();
+
+vh.move(); // prints Vehicles can move!!
+
+}
+
+}
+It should be noted that in the first call to move(), the reference type is Vehicle and the object being referenced is Mot
+orBike. So, when a call to move() is made, Java waits until runtime to determine which object is actually being point
+ed to by the reference. In this case, the object is of the class MotorBike. So, the move() method of MotorBike class
+will be called. In the second call to move(), the object is of the class Vehicle. So, the move() method of Vehicle will
+be called.
+
+As the method to call is determined at runtime, this is called dynamic binding or late binding.
+
+
+4) Inheritance:
+
+=> it is the reausability feature of object oriented programming.
+=> Its a IS-A relationship.
+=> inheritance is the process by which class inherits the properties of another class.
+
+types of inheritance:
+
+1) single inheritance:
+=> child class has only one parent class.
+2) multilevel inheritance:
+=> child class inherits the properties of parent class and that child class is parent class for other class .
+3) multiple inheritance:(java dosen't supports )
+=> child class inherits the properties of more than one parent class
+4) hyrachical inheritance:
+=> parent class is inherited by the multiple child classes .
+5) hybrid inheritance: (java dosen't supports )
+=> its combination of single , multilevel and multiple inheritance in java.
+
+
+HashCode:
+=>hash code is an unique id number allocated to an object by JVM.
+chaining:
+=> we must have to call constractor of super class in subclass.
+NOTE: super() must be a 1st statement in the constructor.
+
+
+===================================================================================
+=============
+Exception Handling:
+
+1) What is Error?
+=> mistakes in the java program because of our program can't compile successfully.
+
+2)what is Exception?
+=> Exception is the event that occured during program exicution, which disturbs the flow of execution and terminate
+program abnormally.
+
+3) what is runtime exception in java?
+=> the runtime exceptions are also called as UnChecked exception.
+=> exception occured during exicution of program is called as UnChecked or runtime Exception.
+=>Ex: ArithmaticExceptions, NullPointerException
+
+4)what is the compiletime(checked) exception in java?
+=> exceptions occured during the compilartion of the program are called as compiletime exceptions
+=> ClassNotFoundException, SQLException , forword reference , IOException.
+
+5) why java throws NullPointerException?
+=> NullPointerException is thrown when program attempts to use an object reference that has the null value.
+
+6)java supports only call by value. when we are going to pass object reference to the call that time we are passing th
+e hashcode of the object.
+
+7)
+UserDefinedExceptions:
+
+=> we can create user defined exceptions by extending Exception class.
+
+
+class UserDefinedException extends Exception
+{
+UserDefinedException(String s)
+{
+System.out.println(s);
+}
+public String toString()
+{
+return "UserDefinedException";
+}
+}
+
+class UserException
+{
+
+void add() throws ArithmeticException
+{
+try
+{
+System.out.println("in the try block...");
+throw new UserDefinedException("handling using constructor");
+}
+catch(Exception e)
+{
+e.printStackTrace();
+
+throw new ArithmeticException();//re-throwing exception
+}
+}
+void sub()
+{
+try
+{
+System.out.println("IN the Try...");
+}
+catch(Exception e)
+{
+
+}
+}
+public static void main(String[] args)
+{
+
+UserException ex = new UserException();
+ex.add();
+}
+}
+
+Exception re-throwing :
+
+=> An exception can be rethrown in a catch block.
+=> This action will cause the exception to be passed to the calling method.
+=> If the rethrow operation occurs in the main method then the exception is passed to the JVM and displayed on th
+e console.
+=> The purpose of the rethrow operation is to get the attention of the outside world that an exception has occurred
+===================================================================================
+=============
+
+Q: what is multithreading in java?
+=> exicuting multiple threads simuntaniously is called as multithreading in java.
+
+Q: what is volatile variable?
+=> we do not want to modify value of veriable concurrently by multiples threads.
+=> multiple threads can change value of the volatile variables but in sequence.
+NOTE: we cant declare local variable as volatile.
+
+THREADS:thread is sheperate flow of exicution is called as thread.
+
+OR
+
+thread is the independant block of code
+
+Life cycle of Thread:
+
+
+NewBorn( new born thread is in the new born state)
+|
+|start();
+|
+ready/runnable(thread is waiting for to allocate memory in cpu for its
+| exicution is in ready or runnable state)
+|
+|
+|
+running ( thread is exicuting is in running state)
+|
+|
+|
+|
+|
+Dead( when thread is stopped then it is Dead thread)
+
+
+
+
+
+
+
+Multitasking:
+
+1) process multitasking :
+=> it is best sutaible at the os(operating system) level.
+
+
+advantages:
+1) to increase the performance of cpu.
+2) cpu will work continuosly.
+
+
+2) thread multitasking :
+=> thread is sheperate flow of exicution is called as thread.
+=> exicuting several task simuntaniously where each task is the sheparate independant part of the same program is
+called as thread based multitasking
+=> and each independant part is called as thread.
+=> each independant part of the program is called as thread.
+
+
+=> every java program contain main thread.
+
+we can create thread using two ways :
+1) by extending Thread class:
+
+
+constructors in the Thread class:
+
+1) Thread t = new Thread();
+2) Thread t = new Thread(Runnable r);
+3) Thread t = new Thread(String threadName);
+4) Thread t = new Thread( Runnable r, String threadName);
+
+
+Thread Priority( 1 to 10):
+
+MIN_PRIORITY = 1
+NORM_PRIORITY = 5
+MAX_PRIORITY = 10
+
+
+methods to prevent thread exicution temporary:
+
+1) yield():
+2) sleep():
+3) join():
+
+1) yield():
+=> it pause the current thread exicution.
+=> when it will start its exicution once again it depends on thread schedular.
+=> public static native void yield();
+=> yield method pause the thread exicution gives the chance to exicute other threads.
+=> if any thread required more time then this method required yield method. because while exicuting it pause for s
+mall amt of time gives chance to exicute other thread.
+
+
+2) sleep():
+=>it throws exception IllegalStartException
+=> thread will sleep for given amount of time.
+=> Thread.sleep(time in ms);
+
+
+
+3) join():
+=> current thread wait until given joined thread exicution complete. or given time
+=> it throws exception IllegalStartException
+=> public final void join();
+
+
+ex:
+class MyThread extends Thread
+{
+public void run()
+{
+for(int i = 0 ; i < 10 ; i++)
+{
+System.out.println("child thread"+i);
+}
+}
+}
+
+public class ThreadDemo
+{
+public static void main(String[] args)
+{
+
+// Its main Thread
+MyThread t = new MyThread();
+t.start(); // main thread start child thread
+for (int i = 0 ; i < 10 ; i++ ) {
+System.out.println("main thread"+i);
+}
+
+// now here main Thread and Child Thread will be exicuted simuntaniously
+}
+}
+
+what is run()?
+=> if we called t.start() then new thread will be created which is responsible to run methods.
+start method creat thread and called to run()
+=> if we called t.run() then run method will be exicuted just like the normal threads
+
+can we overload the run( ) method?
+=> yes we can overload run method but it will exicute like normal method.
+
+=>
+
+
+-------------------------------------------------------------------------------------------------
+what is t.start()?
+importance of the thread class start method:
+
+=> it is responsible to register the thread with the thread schedular and all other mandatory activities hence without
+exicuting start() method there is no chance to create thread in java
+therefore start() method is the heart of the multithreading.
+
+
+public void start()
+{
+1) it register thread
+2) perform other mandatory activities.
+3)after creating thread it call to the run().
+}
+
+-------------------------------------------------------------------------------------------------
+
+
+
+
+
+-------------------------------------------------------------------------------------------------
+java.lang.IllegalThreadStateException:
+
+=> after starting the thread if we are going to start again that thread immidiatly then it will through.
+
+
+class MyThread extends Thread
+{
+public void run()
+{
+for(int i = 0 ; i < 10 ; i++)
+{
+System.out.println("child thread"+i);
+}
+}
+public void run(int i)
+{
+while(i >0 ) {
+i--;
+System.out.println(i);
+}
+}
+}
+
+public class ThreadDemo
+{
+public static void main(String[] args)
+{
+int j = 10;
+// Its main Thread
+MyThread t = new MyThread();
+t.start(); // main thread start child thread
+t.start();//responsible for exception.
+for (int i = 0 ; i < 10 ; i++ ) {
+System.out.println("main thread"+i);
+}
+
+// now here main Thread and Child Thread will be exicuted simuntaniously
+}
+}
+===================================================================================
+=============
+
+2) by implementing Runnable interface:
+
+NOTE : we can create thread by extending Thread class . Thread class also implementing Runnable interface interna
+lly.
+
+Runnable:
+=> Runnable is an interface
+=> java.lang has Runnable
+=> it contains only one method --> public void run();
+
+
+public interface java.lang.Runnable
+{
+public abstract void run();
+}
+
+
+Creating Threads using Runnable:
+
+1)
+
+class MyThread implements Runnable
+{
+
+public void run()
+{
+for(int i = 0 ; i < 10 ; i++)
+{
+System.out.println("child thread"+i);
+}
+}
+}
+
+public class ThreadDemo
+{
+public static void main(String[] args)
+{
+// Its main Thread
+MyThread mt = new MyThread();
+Thread t = new Thread(mt);
+t.start(); // main thread start child thread
+for (int i = 0 ; i < 10 ; i++ ) {
+System.out.println("main thread"+i);
+}
+
+// now here main Thread and Child Thread will be exicuted simuntaniously
+}
+}
+
+Difference between Thread and Runnable
+
+
+Thread:
+=> it is not best way to create thread.
+=> here we are extending the Thread class thats why we cant extends other class.
+=> here we are loosing inheritance feature.
+
+
+Runnable:
+=> it is the best way to create thread.
+=> here we are implementing the RUnnable class thats why we can extends other class.
+
+==> NOTE: write your login in only run method. then only new generated thread will exicute it. 
+            Else there is no use of thread.
+-------------------------------------------------------------------------------------------------
+Synchronization:
+
+=> synchronization is modifier
+=> it is applicable for only method or block .
+=> it is not applicable for the class or variables.
+
+
+=> if multiple threads working on same object simuntaniously then there may be the chance of data inconsistancy p
+roblem.
+=> to resolve data inconsistancy problem we should have to use synchronization keyword.
+
+
+
+=> synchronizer is the modifier which allows only one thread to exicute at a time on the given block or method.
+
+
+Disadvantage:
+=> it increases waiting time of the thread.
+=> it decreases the performance of the program
+
+we dont have to handle synchronization problem JVM internally handle that.
+=> if your thread want to exicute synchronized method on the given object first it has to get lock of the object .
+=> once method exicution complete automatically thread releases the lock.
+=> aquiring and releasing lock internally takes care by JVM and programmer is not responsible for this activity.
+
+NOTE:
+=> if our method is non-static and synchronized then object level lock is required.
+=> if our method is static and synchronized then class level lock is required.
+
+=> our both methods will exicute simuntaniously.
+-------------------------------------------------------------------------------------------------
+
+INTER THREAD COMMUNICATION:
+
+1) wait():
+=> which thread wants update which has to call wait()
+=> after calling wait() it releases the lock of perticular object and goes into the waiting state.
+
+syntax:
+
+public final void wait();
+public final native void wait(long mlsec);
+
+
+2) notify():
+=> the thread which is responsible for updation . after performing updation which has to call notify().
+=> then waiting thread get that notification and start its exicution with those updated items.
+
+syntax:
+
+public final native void notify();
+
+3) notifyall();
+
+public final native void notifyAll();
+
+NOTE:
+=> after calling above three methods threads release the lock of the object.
+=> above wait(),notify(),nofityAll() methods are present in Object class not in Thread.
+=> these three methods we use only in the thread communication.
+=> to call wait(),notify() and notifyAll() method on any object that thread should be owner of that object. that m
+eans thread lock on that object.
+=> we can call wait(),notify(),notifyAll() only from the synchronized area. otherwise we get IllegelMonitorType
+Exception.
+=> we cant override these methods.
+
+Q: why wait(),notify(),notifyAll() methods are in Object class why not in Thread class?
+=> because thread can call these methods on any java object(student,person,etc.. we can perform on any java obj
+ect)
+
+
+=> two threads can communicate with each other by using wait(),notify() and notifyAll() methods:
+
+
+Ex:
+
+
+
+class MyThread extends Thread
+{
+int total;
+public void run()
+{
+synchronized(this)
+{
+for(int i = 0 ; i < 10 ; i++)
+{
+total = total + i;
+}
+this.notify();
+}
+}
+
+
+}
+
+public class ThreadDemo1
+{
+public static void main(String[] args) throws Exception
+{
+MyThread mt = new MyThread();
+mt.start();
+
+synchronized(mt)
+{
+
+mt.wait();
+System.out.println(mt.total);
+
+}
+}
+}
+
+------------------------------------------------------------------------------------------------
+
+DeadLock:
+
+=> if two threads are waiting for each other foreever such type of infinite waiting is called deadlock.
+
+=> synchronized keyword is the only reason for deadlock situation.
+=> there are no resolution techniques for deadlock but there are the several preventional techniques to prevent dead
+lock.
+
+
+
+====================================================================================================================
+
+Streams in Java:
+    => In Java, a sequence of data is known as a stream.
+    => This concept is used to perform I/O operations on a file.
+    => There are two types of streams :
+        1) Input Stream: The Java InputStream class is the superclass of all input streams. The input stream is used to read data from numerous input devices like the keyboard, network, etc.
+        2) Output Stream: The output stream is used to write data to numerous output devices like the monitor, file, etc.
+
+
+====================================================================================================================
+
+Collection:
+
+1) what is the collection?
+=> A Collection represents a group of objects known as its elements.
+=> collection is the java object stores the homogeneous, hetrogenous , duplicates and unique object without size li
+mitation for carring the objects.
+=> collection used to implement data structures concepts in java.
+
+2) in what situation we have to use collection?
+=> Collections are used in situations where data is dynamic.
+=> Collections allow adding an element, deleting an element and host of other operations.
+=> There are a number of Collections in Java allowing to choose the right Collection for the right context
+
+3) what is the meaning of legecy?
+=> old classes are known are legacy classes.
+=> Vector is one of them. Others are Dictionary,HashTable,Properties, Stack.
+=> In this context, legacy means "should not be used anymore in new code"
+
+4) in how many formats we can store the objects in the collection?
+=> 1) in array format
+2) in key-valye format
+
+collection interface hierarchy
+
+                                    Iterable(I)
+                                        |
+                                    collection(I)
+                                        |
+-----------------------------------------------------------------------------------
+|                                       |                                          |
+Set(I)                              List(I)                                     Queue(I)
+|                                       |                                          |
+|-> HashSet(C)                          |->ArrayLIst(C)                            |-> LinkedList
+|                                       |                                          |
+|-> LinkedHashSet(C)                    |->LinkedList(C)                           |-> PriorityQueue
+|                                       |                                          |
+|-> SortedSet(I) |--> TreeSet(C)        |-> Vector(C)                              |-> Dequeue: allows remove and add from both sides.
+
+
+Map(I)
+|
+|-> HashMap
+|
+|-> HashTable
+|
+|-> SortedMap(I)  |--> TreeMap
+
+
+Iterable: 
+    iterator(): The iterable interface contains only one abstract method.
+
+List: 
+    --> structure in ordered form and also allowed duplicate values.  
+
+    1) ArrayList:
+    Advantages:
+        ==> ArrayList uses a dynamic array data structure to store objects and elements.
+        ==> ArrayList allows duplicate objects and elements.
+        ==> ArrayList maintains the insertion order.
+        ==> ArrayList is non-synchronized.(multiple threads access it concurrently).
+    Disadvantages:
+        ==> need shifting on element delete.
+
+    2) Vector:  it is same as ArrayList.
+        ==>  it is synchronized.
+
+    3) LinkList:
+    Advantages:
+        ==> LinkedList allowed storing the duplicate elements.
+        ==> LinkedList maintains the insertion order.
+        ==> LinkedList is not synchronized.
+        ==> LinkedList manipulation is fast because no shifting is required.
+    Disadvantages:
+        ==> Inefficient random access. need to iterate all elements to find object.
+
+    Example:
+
+    package com.practice.collection;
+
+    import java.util.ArrayList;
+    import java.util.Collections;
+    import java.util.Iterator;
+    import java.util.LinkedList;
+    import java.util.List;
+    import java.util.Vector;
+
+    public class ListProgramms {
+
+        public static void main(String[] args) {
+            //  List list = new Vector<>();
+            //  List list = new ArrayList<>();
+                List list = new LinkedList<>();
+                list.add(1);
+                list.add(6);         
+                list.add(2);
+                list.add(3);
+                list.add(4);
+                System.out.println(list);
+                // list.remove(2);
+                printList(list);
+                Collections.reverse(list);
+                printList(list);
+            }    
+
+            public static void printList(List list) {
+                Iterator itr = list.iterator();
+                System.out.println();
+                while(itr.hasNext()) {
+                    System.out.print("--> "+itr.next());
+                }
+            }
+
+    }
+
+SET(I): 
+
+    HashSet(C): HashSet does not guarantee any order of its elements. it does not have random access method ex: set.get(index)
+    LinkedHashSet(C): LinkedHasSet keep insertion order.
+        NOTE: to sort HashSet and LinkedHashSet convert in into arraylist or use Comparator interface or convert it into TreeSet.
+    TreeSet(C): null are not allowed in TreeSet. it stores elements in sorted order. 
+
+Example: 
+
+    package com.practice.collection;
+
+    import java.util.Collections;
+    import java.util.HashMap;
+    import java.util.HashSet;
+    import java.util.Iterator;
+    import java.util.LinkedHashSet;
+    import java.util.Set;
+    import java.util.TreeSet;
+
+    public class ArrayListSorting {
+
+        public static void main(String[] args) {
+            // Set set = new HashSet<>();
+            // Set set = new LinkedHashSet<>();
+            Set set = new TreeSet();
+            set.add(77);
+            set.add(6);         
+            set.add(26);
+            set.add(3);
+            set.add(47);
+            System.out.println(set);
+            set.remove(6);
+            printList(set);
+            
+            printList(set);
+        }    
+
+        public static void printList(Set list) {
+            Iterator itr = list.iterator();
+            System.out.println();
+            while(itr.hasNext()) {
+                System.out.print("--> "+itr.next());
+            }
+        }
+
+    }
+
+
+MAP(I): 
+
+
+----------------------
+NOTE:
+=> AbstractCollection(ac) is the parent class for all abstract classes in the above hierarchy.
+=> defination of all collection interface methods are in the AbstractCollection class.
+
+
+Collection(I):
+=> Parent interfce to all collection interfaces and classes in java.
+=> it has some methods
+=> add(E e)
+=> clear()
+=> contains(E e)
+=> containsAll(Collection<?> c)
+=> equals(Object o)
+=> isEmpty()
+=> iterator()
+=> remove(Object o)
+=> removeAll()
+=> size()
+=> toArray()
+------------------------------------------------------------------------------------------------
+Set(I):
+=> it extends collection
+=> it is the unorder collection of objects.
+=> duplicates are not allowed.
+
+methods:
+
+=> The Set interface contains only methods inherited from Collection and adds the restriction that duplicate elem
+ents are prohibited.
+
+SortedSet(I):
+
+Methods of Sorted Set interface:
+
+=> comparator() : Returns the comparator used to order the elements in this set, or null if this set uses the natural
+ordering of its elements.
+
+=> first() : Returns the first (lowest) element currently in this set.
+
+=> headSet(E toElement) : Returns a view of the portion of this set whose elements are strictly less than toElem
+ent.
+
+=> last() : Returns the last (highest) element currently in this set.
+
+=> subSet(E fromElement, E toElement) : Returns a view of the portion of this set whose elements range from f
+romElement, inclusive, to toElement, exclusive.
+
+=> tailSet(E fromElement) : Returns a view of the portion of this set whose elements are greater than or equal t
+o fromElement.
+
+
+TreeSet():
+=> java TreeSet class implements the Set interface that uses a tree for storage.
+=> It inherits AbstractSet class and implements the NavigableSet interface.
+=> The objects of the TreeSet class are stored in ascending order. ...
+=> Java TreeSet class doesn't allow null element.
+
+=> AbstractSet extends the AbstractCollection.
+
+Use:
+=> when we have store element in sorted order.
+=> when insertion order is not preserved.
+tree data structure:
+
+Unlike Array and Linked List, which are linear data structures, tree is hierarchical (or non-linear) data structure. 1)
+One reason to use trees might be because you want to store information that naturally forms a hierarchy. For exampl
+e, the file system on a computer.
+
+=>Following are the features of TreeSet.
+
+1) TreeSet uses tree data structure for storage.
+2) Objects are stored in sorted, ascending order. But we can iterate in descending order using method TreeSet.desce
+ndingIterator().
+3) Access and retrieval times are very fast which make TreeSet an excellent choice for storage of large volume of d
+ata in sorted format.
+4) TreeSet doesn’t use hashCode() and equals() methods to compare it’s elements. It uses compare() (or compare
+To()) method to determine the equality of two elements.
+
+PROGRAMMS:
+
+import java.util.*;
+class Overview
+{
+
+
+public static void main(String[] args)
+{
+Set s = new TreeSet();
+
+s.add("NITIN");
+s.add("VIKAS");
+s.add("BARKUBAI");
+s.add("1");
+System.out.println(s);// in ascending order.
+}
+
+}
+
+
+op:
+[1, BARKUBAI, NITIN, VIKAS]
+
+import java.util.*;
+class Overview
+{
+
+
+public static void main(String[] args)
+{
+TreeSet s = new TreeSet();
+
+s.add("NITIN");
+s.add("VIKAS");
+s.add("BARKUBAI");
+s.add("1");
+System.out.println(s);
+Set s1 = (TreeSet)s.descendingSet();
+System.out.println(s1);
+}
+
+}
+
+op:
+[1, BARKUBAI, NITIN, VIKAS]
+[VIKAS, NITIN, BARKUBAI, 1]
+
+import java.util.*;
+class Overview
+{
+
+
+public static void main(String[] args)
+{
+TreeSet s = new TreeSet();
+
+s.add("NITIN");
+s.add("VIKAS");
+s.add("BARKUBAI");
+s.add("1");
+System.out.println(s);
+Set s1 = (TreeSet)s.descendingSet();
+System.out.println(s1);
+s.remove("1");
+System.out.println(s);
+System.out.println(s1);
+}
+
+}
+
+op:
+
+[1, BARKUBAI, NITIN, VIKAS]
+[VIKAS, NITIN, BARKUBAI, 1]
+[BARKUBAI, NITIN, VIKAS]
+[VIKAS, NITIN, BARKUBAI]
+
+
+=> with iterator:
+
+import java.util.*;
+class Overview
+{
+
+
+public static void main(String[] args)
+{
+TreeSet s = new TreeSet();
+
+s.add("NITIN");
+s.add("VIKAS");
+s.add("BARKUBAI");
+s.add("BARKUBAI");
+s.add("1");
+System.out.println(s);
+Set s1 = (TreeSet)s.descendingSet();
+System.out.println(s1);
+Iterator itr = s.iterator();
+while(itr.hasNext())
+{
+System.out.println(itr.next());
+}
+}
+
+}
+OP:
+[1, BARKUBAI, NITIN, VIKAS]
+[VIKAS, NITIN, BARKUBAI, 1]
+1
+BARKUBAI
+NITIN
+VIKAS
+
+=> primitive datatypes:
+
+import java.util.*;
+class Overview
+{
+
+
+public static void main(String[] args)
+{
+TreeSet s = new TreeSet();
+int j = 10 , i = 11 , m = 12 , k = 13
+;
+s.add(i);
+s.add(j);
+s.add(k);
+s.add(new Integer(20));
+
+System.out.println(s);
+Set s1 = (TreeSet)s.descendingSet();
+System.out.println(s1);
+Iterator itr = s.iterator();
+while(itr.hasNext())
+{
+System.out.println(itr.next());
+}
+}
+
+}
+
+OP:
+[10, 11, 13, 20]
+[20, 13, 11, 10]
+10
+11
+13
+20
+
+NOTE:
+
+------------------------------------------------------------------------------------------------
+
+HashSet:
+=> underlined data strucure is HashTable
+=> null is allowed
+=> heterogenous objects are allowed.
+=> HashSet doesn't have key/value pairs.
+=> insertion oreder is not preserved.
+
+
+import java.util.*;
+class Overview
+{
+
+
+public static void main(String[] args)
+{
+TreeSet h = new TreeSet();
+HashSet s = new HashSet();
+LinkedHashSet ls = new LinkedHashSet(10);
+
+int j = 30 , i = 11 , m = 12 , k = 13
+;
+s.add(i);
+s.add(j);
+s.add(k);
+s.add(new Integer(20));
+
+System.out.println(s);
+Iterator itr = s.iterator();
+while(itr.hasNext())
+{
+System.out.println(itr.next());
+}
+System.out.println(s.size());
+}
+
+}
+
+OP:
+
+[20, 11, 13, 30]
+20
+11
+13
+30
+4
+
+
+LinkedHashSet:
+
+=>insertion oreder is preserved.
+
+import java.util.*;
+class Overview
+{
+
+
+public static void main(String[] args)
+{
+TreeSet h = new TreeSet();
+HashSet ls = new HashSet();
+LinkedHashSet s = new LinkedHashSet(10);
+
+int j = 30 , i = 11 , m = 12 , k = 13
+;
+s.add(i);
+s.add(j);
+s.add(k);
+s.add(new Integer(20));
+
+System.out.println(s);
+Iterator itr = s.iterator();
+while(itr.hasNext())
+{
+System.out.println(itr.next());
+}
+System.out.println(s.size());
+}
+
+}
+
+OP:
+
+java Overview
+[11, 30, 13, 20]
+11
+30
+13
+20
+4
+
+===================================================================================
+=============List(I):
+
+=> duplicate values can be stored.
+=> Since List preserves the insertion order, it allows positional access and insertion of elements.
+=> List Interface is implemented by the classes of ArrayList, LinkedList, Vector and Stack
+
+1)ArrayList:
+==> ArrayList uses a dynamic array data structure to store objects and elements.
+==> ArrayList allows duplicate objects and elements.
+==> ArrayList maintains the insertion order.
+==> ArrayList is non-synchronized.(multiple threads access it concurrently).
+
+2) Vector:
+
+=> its simillar to the ArrayList But vector is synchronized.
+=> it has some legecy method(old methods).
+
+3) LinkedList:
+
+=> linear data structures where the elements are not stored in contiguous locations
+=> every element is a separate object with a data part and address part.
+
+1) ArrayList:
+
+import java.io.*;
+import java.util.*;
+
+class arrayli
+{
+public static void main(String[] args)
+throws IOException
+{
+// size of ArrayList
+int n = 5;
+
+//declaring ArrayList with initial size n
+ArrayList<Integer> arrli = new ArrayList<Integer>(n);
+
+// Appending the new element at the end of the list
+for (int i=1; i<=n; i++)
+arrli.add(i);
+
+// Printing elements
+System.out.println(arrli);
+
+// Remove element at index 3
+arrli.remove(3);
+
+// Displaying ArrayList after deletion
+System.out.println(arrli);
+
+// Printing elements one by one
+for (int i=0; i<arrli.size(); i++)
+System.out.print(arrli.get(i)+" ");
+}
+}
+Output:
+
+[1, 2, 3, 4, 5]
+[1, 2, 3, 5]
+1 2 3 5
+
+2) LinkedList:
+
+import java.util.*;
+public class JavaExample{
+public static void main(String args[]){
+
+LinkedList<String> list=new LinkedList<String>();
+
+list.add("Steve");
+list.add("Carl");
+list.add("Raj");
+
+list.addFirst("Negan");
+
+list.addLast("Rick");
+
+list.add(2, "Glenn");
+
+Iterator<String> iterator=list.iterator();
+while(iterator.hasNext()){
+System.out.println(iterator.next());
+}
+}
+}
+
+
+Stack:
+=> LIFO
+------------------------------------------------------------------------------------------------
+
+Queue:
+
+=> FIFO
+
+------------------------------------------------------------------------------------------------
+
+Map:
+
+=> stores the values in the key-values format.
+=> key should be unique and values can be duplicate.
+=> each (key , value) is called as entry.
+
+HashTable:
+
+=> null not allowed
+=> synchronized
+
+import java.util.*;
+class hashTabledemo {
+public static void main(String[] arg)
+{
+// creating a hash table
+Hashtable<Integer, String> h =
+new Hashtable<Integer, String>();
+
+Hashtable<Integer, String> h1 =
+new Hashtable<Integer, String>();
+
+h.put(3, "Geeks");
+h.put(2, "forGeeks");
+h.put(1, "isBest");
+
+// create a clone or shallow copy of hash table h
+h1 = (Hashtable<Integer, String>)h.clone();
+
+// checking clone h1
+System.out.println("values in clone: " + h1);
+
+// clear hash table h
+h.clear();
+
+// checking hash table h
+System.out.println("after clearing: " + h);
+}
+}
+
+HashMap:
+
+=> Java HashMap is a hash table based implementation of Java's Map interface.
+=> A Map, as you might know, is a collection of key-value pairs.
+=> It maps keys to values. A HashMap cannot contain duplicate keys
+
+=> not synchronized
+=> allow null
+=> not preserve the insertion order
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Main
+{
+// This function prints ordering of all elements
+static void insertAndPrint(AbstractMap<Integer, String> map)
+{
+int[] array= {1, -1, 0, 2,-2};
+for (int x: array)
+{
+map.put(x, Integer.toString(x));
+}
+for (int k: map.keySet())
+{
+System.out.print(k + ", ");
+}
+}
+
+// Driver method to test above method
+public static void main (String[] args)
+{
+HashMap<Integer, String> map = new HashMap<Integer, String>();
+insertAndPrint(map);
+}
+}
+
+
+LinkedHashMap:
+
+=> preserve the insertion order
+
+mport java.util.Set;
+import java.util.Iterator;
+import java.util.Map;
+public class LinkedHashMapDemo {
+public static void main(String args[]) {
+// HashMap Declaration
+LinkedHashMap<Integer, String> lhmap =
+new LinkedHashMap<Integer, String>();
+
+//Adding elements to LinkedHashMap
+lhmap.put(22, "Abey");
+lhmap.put(33, "Dawn");
+lhmap.put(1, "Sherry");
+lhmap.put(2, "Karon");
+lhmap.put(100, "Jim");
+
+// Generating a Set of entries
+Set set = lhmap.entrySet();
+
+// Displaying elements of LinkedHashMap
+Iterator iterator = set.iterator();
+while(iterator.hasNext()) {
+Map.Entry me = (Map.Entry)iterator.next();
+System.out.print("Key is: "+ me.getKey() +
+"& Value is: "+me.getValue()+"\n");
+}
+}
+
+
+TreeMap:
+
+=> TreeMap class implements Map interface similar to HashMap class.
+=> The main difference between them is that HashMap is an unordered collection while TreeMap is sorted in the as
+cending order of its keys.
+=> TreeMap is unsynchronized collection class which means it is not suitable for thread-safe operations until unless
+synchronized explicitly
+
+
+
+import java.util.TreeMap;
+import java.util.Set;
+import java.util.Iterator;
+import java.util.Map;
+
+public class Details {
+
+public static void main(String args[]) {
+
+/* This is how to declare TreeMap */
+TreeMap<Integer, String> tmap =
+new TreeMap<Integer, String>();
+
+/*Adding elements to TreeMap*/
+tmap.put(1, "Data1");
+tmap.put(23, "Data2");
+tmap.put(70, "Data3");
+tmap.put(4, "Data4");
+tmap.put(2, "Data5");
+
+/* Display content using Iterator*/
+Set set = tmap.entrySet();
+Iterator iterator = set.iterator();
+while(iterator.hasNext()) {
+Map.Entry mentry = (Map.Entry)iterator.next();
+System.out.print("key is: "+ mentry.getKey() + " & Value is: ");
+System.out.println(mentry.getValue());
+}
+
+}
+}
+Output:
+
+key is: 1 & Value is: Data1
+key is: 2 & Value is: Data5
+key is: 4 & Value is: Data4
+key is: 23 & Value is: Data2
+key is: 70 & Value is: Data3
+------------------------------------------------------------------------------------------------
+
+Set:
+
+=> duplicates are not allowed.
+=> we have to use Set when we want to store unique objects
+
+1) HashSet:
+=> elements are not sorted.
+=> allows null objects.
+=> insertion order is not preserved.
+
+2) LinkedHashSet:
+
+=> it allows null
+=> it preserve the insertion order.
+
+3) TreeSet:
+=> TreeSet stores the element in the sorted Order.
+=> it dosent allow null
+
+When we have to use which collection:
+
+1) if you want data sorted and without duplications use TreeSet.
+2) it want set collection with it will be fast and allows null then use HashSet.
+3) if want to keep the insertion order then better to go for LinkedHashSet.
+
+
+List:
+=> duplicates are allowed.
+=> when we want to store the non-unique objects then better to use List.
+
+
+1) ArrayList:
+=> internally uses the array to store the elements.
+=> if any elements is added or removed from ArrayList then internally it shifts all elements.
+2) LinkedList:
+=> internally uses the doubly LinkedList.
+=> it is faster than ArrayList.
+
+3) Vector:
+=> it is simillar to ArrayList.
+=> it is thread safe.
+=> it is synchronized.
+4) Stack:
+=> its datastructore that LIFO.
+
+
+Queue:
+=> it works on the basis of FIFO.
+
+Map:
+=> it stores the Objects in the key-value format.
+
+
+HashMap:
+=> no ordering on keys and values.
+
+TreeMap:
+=> ordering on keys and values.
+
+LinkedHashMap:
+=> it preserves the insertion order.
+
+HashTable:
+=> it is synchronized.
+
+------------------------------------------------------------------------------------------------
+
+Remaining Collection Program,fileHandling program, Cursor , Classes In Java.
+
+Cursor:
+=> cursors in the java used to traverse in the collection.
+=> there are following 3 types of the cursors:
+
+=> Enumeration:
+=> it is from java 1.0
+=> it works on only legecy classes.
+=> it has very lengthy methods names like hasMoreElement(),nextElement()
+=> its unidirectional.
+=> it moves only in the forword direction.
+
+
+=> Iterator:
+=> compare to Enumerator Iterator has simple and easy methods names.
+Ex: 1) hasNext(): returns true if collection has nect element.
+2) next(): returns next() element of the collection.
+3) remove(): used to remove element from the collection.
+=> it works for all collections thats why it is called as Universal Iterator.
+=> we can perform only READ and REMOVE operations using Iterator
+=> its Unidirectional.
+
+
+
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class ExternalIteratorDemo
+{
+public static void main(String[] args)
+{
+List<String> names = new LinkedList<>();
+names.add("Rams");
+names.add("Posa");
+names.add("Chinni");
+
+// Getting Iterator
+Iterator<String> namesIterator = names.iterator();
+
+// Traversing elements
+while(namesIterator.hasNext()){
+System.out.println(namesIterator.next());
+}
+
+}
+}
+
+
+=> ListIterator:
+=> it is bidirectional
+=> it can retrive elements form both directions forword and reverse directions.
+
+=> methods:
+1) hasNext():
+2) hasPrevious():
+3) next():
+4) previous():
+5) remove():
+6) nextIndex():
+7) previousIndex():
+
+import java. util.* ;
+
+class Test
+{
+public static void main(String args[])
+{
+// take a vector to store Integer objects
+Vector<Integer> v = new Vector<Integer>();
+
+// Adding Elements to Vector
+v.add(10);
+v.add(20);
+v.add(30);
+
+// Creating a ListIterator
+ListIterator lit = v.listIterator();
+System.out.println("In Forward direction:");
+
+while (lit.hasNext())
+System.out.print(lit.next()+" ") ;
+
+System.out.print("\n\nIn backward direction:\n") ;
+while (lit.hasPrevious())
+System.out.print(lit.previous()+" ");
+}
+}
+
+what is generic collection in java?
+=> Java Generics, introduced in Java 5, provide stronger type safety. Generics allow types to be passed as parameter
+s to class, interface, and method declarations. ... With the type parameter, the compiler ensures that we use the collec
+tion with objects of a compatible type only.
+
+
+
+===================================================================================
+=============
+
+
+
+Study of classes:
+
+
+StringBuffer:
+
+=> A thread-safe, mutable sequence of characters. A string buffer is like a String, but can be modified. At any point
+in time it contains some particular sequence of characters, but the length and content of the sequence can be changed
+through certain method calls.
+
+=> String buffers are safe for use by multiple threads.
+=> The methods are synchronized where necessary so that all the operations on any particular instance behave as if
+they occur in some serial order that is consistent with the order of the method calls made by each of the individual th
+reads involved.
+
+StringBuilder:
+
+class is designed for use as a replacement for StringBuffer in places where the string buffer was being used by a sin
+gle thread (as is generally the case). If execution speed and performance is a factor, StringBuilder class can be used i
+n place of StringBuffer.
+
+With autoboxing and auto-unboxing, the capability the conversion between primitive types and objects occurs autom
+atically. Autoboxing converts primitive types into wrapper objects and auto-unboxing takes place when an object is t
+o be converted into a primitive type
+
+Charactor class:
+
+isDigit()
+isWhiteSpace()
+isAlphabet()
+
+
+Serialization is a mechanism of converting the state of an object into a byte stream. Deserialization is the reverse pro
+cess where the byte stream is used to recreate the actual Java object in memory. ... To make a Java object serializabl
+e we implement the java.io.Serializable interface.
+
+Q) difference between transient and @transient
+==> Java's transient keyword is used to denote that a field is not to be serialized, whereas JPA's @Transient annotation is used to indicate that a field is not to be persisted in the database, i.e. their semantics are different.
+
+Comparable:
+    ==> interface has compareTo method.
+    ==> we have implement in the class which objects we want to sort.
+    ==> single sorting method, in other word we can sort student by only rollNo or marks or age etc.
+    ==> it affects original class.
+
+
+package com.practice.collection;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
+public class ComparablePractice {
+
+	public static void main(String[] args) {
+		ArrayList<Student> list = new ArrayList<Student>();
+		list.add(new Student(1,"NITIN", 12));
+		list.add(new Student(5,"PRATIKSHA", 67));
+		list.add(new Student(57,"SONA", 34));
+		list.add(new Student(113,"Rupnavar", 74));
+		list.add(new Student(36,"Nitu", 64));
+		list.add(new Student(306,"Bapu", 14));
+		list.add(new Student(6,"Bedre", 54));
+		list.add(new Student(10,"VIKAS", 34));
+		display(list);
+		Collections.sort(list);
+		display(list);
+	}
+	
+	static void display(ArrayList<Student> list) {
+		System.out.println("Student List: ");
+		for(Student obj: list) {
+			System.out.println(obj);
+		}
+	}
+
+}
+
+class Student implements Comparable<Student>{
+	Integer rollNo;
+	String studentName;
+	Integer studentAge;
+    
+	public Student(Integer rollNo, String studentName, Integer studentAge) {
+		this.rollNo = rollNo;
+		this.studentName = studentName;
+		this.studentAge = studentAge;
+	}
+	public Integer getRollNo() {
+		return rollNo;
+	}
+	public void setRollNo(Integer rollNo) {
+		this.rollNo = rollNo;
+	}
+	public String getStudentName() {
+		return studentName;
+	}
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+	public Integer getStudentAge() {
+		return studentAge;
+	}
+	public void setStudentAge(Integer studentAge) {
+		this.studentAge = studentAge;
+	}
+	@Override
+	public String toString() {
+		return "Student [rollNo=" + rollNo + ", studentName=" + studentName + ", studentAge=" + studentAge + "]";
+	}
+	
+	public int compareTo(Student obj) {
+		if(studentAge == obj.studentAge) {
+			return 0;
+		}
+		else if(studentAge > obj.studentAge ) {
+			return 1;
+		} else {
+			return -1;
+		}
+		
+	}
+	
+	
+	
+}
+
+Comparator: 
+    ==> create new class for sorting and implement comparator.
+    ==> we can create multiple classes for multiple fields and use those classes object for sorting. ex: Collections.sort(list, new FieldNameComparator())
+    ==> it doesn't disturb original class.
+
+package com.practice.collection;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class ComparatorPractice {
+
+	public static void main(String[] args) {
+		ArrayList<Student> list = new ArrayList<Student>();
+		list.add(new Student(1,"NITIN", 12));
+		list.add(new Student(5,"PRATIKSHA", 67));
+		list.add(new Student(57,"SONA", 34));
+		list.add(new Student(113,"Rupnavar", 74));
+		list.add(new Student(36,"Nitu", 64));
+		list.add(new Student(306,"Bapu", 14));
+		list.add(new Student(6,"Bedre", 54));
+		list.add(new Student(10,"VIKAS", 34));
+		display(list);
+		Collections.sort(list, new NameComparator());
+		display(list);
+	}
+	
+	static void display(ArrayList<Student> list) {
+		System.out.println("Student List: ");
+		for(Student obj: list) {
+			System.out.println(obj);
+		}
+	}
+
+}
+
+class NameComparator implements Comparator<Student>{
+
+	@Override
+	public int compare(Student o1, Student o2) {
+		return o1.studentName.compareTo(o2.studentName);
+	}
+
+}
+
+class AgeComparator implements Comparator<Student>{
+
+	@Override
+	public int compare(Student o1, Student o2) {
+		if(o1.studentAge == o2.studentAge) {
+			return 0;
+		} else if(o1.studentAge > o2.studentAge) {
+			return 1;
+		} else {
+			return -1;
+		}
+	}
+
+}
+
+class Student {
+	Integer rollNo;
+	String studentName;
+	Integer studentAge;
+	
+	
+	public Student(Integer rollNo, String studentName, Integer studentAge) {
+		this.rollNo = rollNo;
+		this.studentName = studentName;
+		this.studentAge = studentAge;
+	}
+	public Integer getRollNo() {
+		return rollNo;
+	}
+	public void setRollNo(Integer rollNo) {
+		this.rollNo = rollNo;
+	}
+	public String getStudentName() {
+		return studentName;
+	}
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+	public Integer getStudentAge() {
+		return studentAge;
+	}
+	public void setStudentAge(Integer studentAge) {
+		this.studentAge = studentAge;
+	}
+	@Override
+	public String toString() {
+		return "Student [rollNo=" + rollNo + ", studentName=" + studentName + ", studentAge=" + studentAge + "]";
+	}
+	
+	
+	
+}
+
+--------------------------------------------------------------------------------------------------------
+
+Contract between Hashcode and equals:
+
+Student s1 = new Student(1, "Nitin");
+Student s2 = new Student(1, "Nitin");
+
+System.out.println("shodow comparison: "+ (s1 == s2));  // false until you find asignment as s1 = s2.
+System.out.println("shodow comparison: "+ s1.equals(s2)); // false until you override method.
+
+1) if two objects are equal according to equals object of Object class then both should have same integer hashcode value. 
+2) it is not necessary if two objects have same hashcode means they are equal. this is collision. better hash functions prevent this. 
+
+
+Ex: 
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class Student {
+    int id;
+    String name;
+    
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    
+    void setId(int id) {
+        this.id = id;
+    }
+    
+    void setName(String name) {
+        this.name = name;
+    }
+    
+    int getId() {
+        return this.id;
+    }
+    
+    String getName() {
+        return this.name;
+    }
+    
+    public boolean equals(Object o) {
+        if(o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        
+        if(o == this) {
+            return true;
+        }
+        
+        Student obj = (Student)o;
+        return obj.getId() == this.getId();
+    }
+    
+    
+    
+}
+class HelloWorld {
+    public static void main(String[] args) {
+        Student s1 = new Student(1, "Nitin");
+        Student s2 = new Student(1, "Nitin");
+        Student s3 = new Student(3, "Akshay");
+        System.out.println("shodow comparison: "+ (s1 == s2));
+        System.out.println("shodow comparison: "+ s1.equals(s2));
+    }
+}
+
+==============================================================================================================
+
+what is states of persistance entities.
+can we use yml and application.properties in same app.
+what is composition in java. 
+
+
+Internal working of hashmap:
+    after creating hashmap it will create 16 buckets by default.
+1) creates hashcode for key => hashcode = hash(key);
+2) with & oprator create index where to store => index = hascode & (n-1)
+3) in case of null key it will store at 0th index.
+4) in case of duplicate index it replaces data.
+5) in case of hashcollision it will store data in LinkedList format in bucket. 
+6) Load Factor is a factor that is internally used by HashMap to determine when the size of Bucket array requires to be increased. By default, it is 0.75.
+
+
+Interview Questions 
+1) polymorphism programs 
+2) access specifiers working 
+3) exception handling in java 
+4) threading in java: deadlock, print even and odd number by different threads, ways of creating threads. 
+5) java 8 features 
+6) can we override main method in java
+7) map and flatmap in stream 
+8) have you used optional 
+9) what is contract between hashcode and equals 
+
+

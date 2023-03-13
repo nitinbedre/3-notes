@@ -1,0 +1,18 @@
+1. Tell me about yourself.
+2. which version of Java have you worked on?
+3. what are the java 8 features?
+4. what is Functional Interface? what is difference between normal interface and functional interface? Have you used Functional Interface in your project?
+5. what is stream API?
+6. write java program to find occurrence of character in string
+    ex: String str = "NITIN" 
+    o/p: N = 2
+         I = 2
+         T = 1
+
+7. what is exception in java?
+8. what are the types of the exceptions? 
+    Ans: compile time exception(checked) and runtime exception(unchecked)
+9. what is compile time exception and runtime exception.
+10. How to create custom exception in java?
+
+

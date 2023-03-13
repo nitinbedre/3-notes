@@ -1,0 +1,77 @@
+Spring MVC:
+
+    ==> It follows the Model-View-Controller design pattern. it is the way to organize code in better way. 
+    ==> it implements all the basic features of a core spring framework like Inversion of Control, Dependency Injection.
+    ==> A Spring MVC provides an elegant solution to use MVC in spring framework by the help of DispatcherServlet
+    ==> Here, DispatcherServlet is a class that receives the incoming request and maps it to the right resource such as controllers, models, and views.
+
+M: Model - A model contains the data of the application. A data can be a single object or a collection of objects.
+V: View - A view represents the provided information in a particular format. Generally, JSP+JSTL is used to create a view page. Although spring also supports other view technologies such as Apache Velocity, Thymeleaf and FreeMarker
+C: Controller - A controller contains the business logic of an application. Here, the @Controller annotation is used to mark the class as the controller.
+
+Front Controller - In Spring Web MVC, the DispatcherServlet class works as the front controller. It is responsible to manage the flow of the Spring MVC application.
+
+
+Spring MVC flow:                        2)
+                                 -----Handler Mapping
+                    1)           |    3)              4)          5)          6)
+request --> DispatcherServlet  --|----Controller ---> Service  --> DAO   --> Database  --->|
+             10)    8)           |          |                                              |
+                                 |          |--------<------modal(data) and View name<--<--|
+                            View resolver                       7)
+                                9)
+
+
+Description: 
+
+    1) DispatcherServlet finds the controller with help of helper mapping.
+    2) send request to the controller. controller process the request and generate modal(data) and returns modal and view name to DispatcherServlet
+    3) DispatcherServlet send modal and view name to view resolver.
+    4) view resolver bind the view with modal and return response to DispatcherServlet.
+    5) DispatcherServlet send response back to client.
+
+
+create MVC application:
+
+    1) install tomcat. install eclipse. 
+    2) create new maven project. 
+    3) select maven-archetype-webapp
+    4) configure DispatcherServlet in web.xml
+        
+        <web-app>
+            <servlet-name>spring</servlet-name>
+            <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+
+            <servlet-name>spring</servlet-name>
+            <servlet-pattern>/</servlet-pattern>
+        <webapp>
+
+    5) configure view resolver in DispatcherServletName-servlet.xml 
+
+        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+            <property name="prefix" value="/WEB-INF/views/"> </property>
+            <property name="suffix" value=".jsp"> <property>
+        </bean>
+
+    6) create controller and return view name
+
+    7) create jsp file.
+
+    8) run application.
+
+
+    Return Modal to View:
+
+    1) in your controller take Modal as a method parameter.
+    2) and use modal.setAttribute(key,val) method to set data.
+    3) this technique binds data with the request object.
+    4) we get data in our jsp page with request.getAttribute(keyName);
+    4) and show in JSP.
+    
+      
+
+Interview Questions:
+
+Q.1) Why Should We Use Spring MVC?
+==> it shaperates our modal, view and controller and helps in rapid application development.
+    ==>  What Is the Role of the @Autowired Annotation?

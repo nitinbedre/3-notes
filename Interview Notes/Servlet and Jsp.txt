@@ -1,0 +1,146 @@
+servlet:
+    ==> The web container creates threads for handling the multiple requests to the Servlet.
+    
+servlet life cycle:
+
+    ==> Servlet class is loaded:  The servlet class is loaded when the first request for the servlet is received by the web container.
+    ==> Servlet instance is created : The web container creates the instance of a servlet after loading the servlet class. The servlet instance is created only once in the servlet life cycle
+    ==> init method is invoked: The web container calls the init method only once after creating the servlet instance. The init method is used to initialize the servlet
+        -> public void init(ServletConfig config) throws ServletException  
+
+    ==> service method is invoked : The web container calls the service method each time when request for the servlet is received
+        -> public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException  
+
+    ==> destroy method is invoked: It gives the servlet an opportunity to clean up any resource for example memory, thread etc
+
+GenericServlet: 
+    ==> it extends servlet. 
+    ==> It provides the implementation of all the methods of these interfaces except the service method.
+    ==> GenericServlet class can handle any type of request so it is protocol-independent.
+
+HttpServlet : 
+    ==> The HttpServlet class extends the GenericServlet class.
+    ==> It provides http specific methods such as doGet, doPost, doHead, doTrace etc.
+
+directory structure : The directory structure defines that where to put the different types of files so that web container may get the information and respond to the client.
+
+Ex: 
+
+    import javax.servlet.http.*;  
+    import javax.servlet.*;  
+    import java.io.*;  
+    public class DemoServlet extends HttpServlet{  
+        public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException  {  
+            res.setContentType("text/html");//setting the content type  
+            PrintWriter pw=res.getWriter();//get the stream to write the data  
+            
+            //writing html in the stream  
+            pw.println("<html><body>");  
+            pw.println("Welcome to servlet");  
+            pw.println("</body></html>");  
+            
+            pw.close();//closing the stream  
+        }
+    }
+
+
+    web.xml
+
+    <web-app>  
+  
+        <servlet>  
+            <servlet-name>sonoojaiswal</servlet-name>  
+            <servlet-class>DemoServlet</servlet-class>  
+        </servlet>  
+        
+        <servlet-mapping>  
+            <servlet-name>sonoojaiswal</servlet-name>  
+            <url-pattern>/welcome</url-pattern>  
+        </servlet-mapping>  
+    
+    </web-app>  
+
+
+    RequestDispatcher: 
+        ==> The RequestDispatcher interface provides the facility of dispatching the request to another resource it may be html, servlet or jsp.
+        ==> used to include the content of another resource.
+        ==> It is one of the way of servlet collaboration.
+
+    methods: 
+
+        1) public void forward(ServletRequest request,ServletResponse response)throws ServletException,java.io.IOException
+            ==> Forwards a request from a servlet to another resource (servlet, JSP file, or HTML file) on the server.
+        2) public void include(ServletRequest request,ServletResponse response)throws ServletException,java.io.IOException
+            ==> Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
+
+    ServletRequest interface returns the object of RequestDispatcher
+    RequestDispatcher rd=request.getRequestDispatcher("servlet2");  
+    rd.forward(request, response);//method may be include or forward  
+
+    ServletConfig: ServletConfig is for a specific servlet.
+
+    ServletContext: ServletContext is available for all servlets in the web application.
+
+
+Session Tracking in Servlets: Session Tracking is a way to maintain state (data) of an user. It is also known as session management in servlet.
+    There are four techniques used in Session tracking:
+
+    Cookies
+    Hidden Form Field
+    URL Rewriting
+    HttpSession
+
+
+
+Java Server Page(JSP):
+
+this is simple jsp file.
+index.jsp
+
+<html>  
+<body>  
+<% out.print(2*5); %>  
+</body>  
+</html>  
+
+we use html tags and JSP scripting elements.
+
+JSP scripting tags:
+
+1) Scrptlet tag: <%    %>
+    ==> scriptlet tag used to write java code in HTML <%    %>
+
+2) Expression Tag:  <%=    %>
+    ==> Ex
+
+    <html>  
+    <body>  
+        <%= "welcome to jsp" %>  
+    </body>  
+    </html>  
+
+3) Declaratioin Tag: <%!   %>
+    ==> declaration tag used to declare variables or methods.
+
+    Ex: 1)
+
+    <html>  
+        <body>  
+        <%!   
+            int cube(int n){  
+            return n*n*n*;  
+            }  
+        %>  
+        <%= "Cube of 3 is:"+cube(3) %>  
+        </body>  
+    </html>  
+
+2) 
+
+    <html>  
+    <body>  
+        <%! int data=50; %>  
+        <%= "Value of the variable is:"+data %>  
+    </body>  
+    </html>  
+     

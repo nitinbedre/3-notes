@@ -1,0 +1,113 @@
+SQL Sub Languages in every database:
+
+1) Data Definition Language (DDL): These commands are used to define structure of the table
+==> Create: to create table.
+==> Alter: ADD, MODIFY(changes datatype), Drop(drops column)
+==> Drop: will drop table from database.
+==> Truncate: will delete all data from table.
+==> Rename(oracle 9i)
+
+2) Data Manipulation Language (DML):
+==> Insert
+==> update
+==> delete
+==> merge(oracle 9i)
+
+3) Data Retrieval Language(DRL) or Data Query Language(DQL):
+==> SELECT
+1. Arthematic operator(+,-,*,/)
+2. Relational operator(=,<,<=,>,>=,[<> or!=]not equal).
+3. Logical operator (AND,OR,NOT)
+4. Special operator
+    1) ‘In’ opposite ‘not in’
+    2) ‘between’ opposite ‘not between’
+    3) ‘is null’ opposite ‘is not null’
+    4) ‘like’ opposite ‘not like’:  % -> group of characters if want to match or string
+                                    _ -> single character to match.
+
+
+4) Transactional Control Language (TCL):
+==> Commit
+==> Rollback
+==> Savepoint
+
+5) Data Control Language(DCL):
+==> Grant
+==> Revoke
+
+
+Functions: are used to solve particular task and also functions must return a
+value. Oracle have two types of functions.
+
+GROUP FUNCTION (OR) AGGREGATE FUNCTION:
+1. max()
+2. min()
+3. avg()
+4. sum()
+5. count(*)
+6. count(column name)
+7. GROUP BY:
+8. ORDER BY: This clause is used to arrange the data in sorting order along with “order by” clause we are using two keywords.
+HAVING Clause: In all databse systems after “group by” clause we are not allowed to use “where” clause. so use Having clause.
+
+
+JOINS: 
+
+INNER JOIN: 
+LEFT OUTER JOIN:
+RIGHT OUTER JOIN:
+FULL OUTER JOIN:
+
+constraint: Constraints are used to prevents or stops invalid data entry into our tables.
+
+1) NOT NULL: This constraint doesn’t accepts null values
+2) UNIQUE: This constraint doesn’t accepts duplicate values. But it will accepts null values.
+3) Primary key:  Primary key "Uniquely identifying a record in a table. There can be only one primary key in a table and also primary key doesn’t accepts duplicate null values
+4) Foreign Key: If we want to establishes relationship between tables then we are using “Referential Integrity Constraints” (Foreign Key).
+NOTE:   
+    ==> One table foreign key must belongs to another table “primary key”.
+    ==> primary key doesn’t accepts duplicate, null, values where as foreign key accepts duplicate, null values.
+
+while establishining relationship
+1) Deletion in Parent table.
+2) Insertion in Child table.
+
+use following clause on child table.
+
+1) on delete cascade: when we will delete parent table record, it will delete its child also.
+2) on delete set null: when we will delete parent table record. it will set NULL foreign key in child.
+
+VIEWS:
+    ==> VIEW is same as table. 
+    ==> Generally, views are created by “Database Administrator”
+
+Transactions:
+    ==> commit: when you delete record it can be rollbacked until not commited.
+    ==> rollback: when you delete row. you can rollback. 
+    ==> savepoint: A SAVEPOINT is a point in a transaction when you can roll the transaction back to a certain point without rolling back the entire transaction.
+    ==> release savepoint savepoint(RELEASE SAVEPOINT SAVEPOINT_NAME): it will delete savepoints.
+
+Indexes in Mysql:
+    ==> The CREATE INDEX statement is used to create indexes in tables.
+    ==> Indexes are used to retrieve data from the database more quickly than otherwise.
+
+==============================================================================================================================================
+
+Different Entity states in JPA and Hibernate:
+
+1) New (Transient) state:  The data of objects in this state is not stored in the database.
+2) Persistent (JPA managed) stat: The object changes will be auto migrated at tx.commit()
+3) deattached: Once tx.commit() is executed, the object becomes detached.
+
+
+1) what are the different entity states in Spring boot JPA?
+2) can we integrate two entities with one repository
+3) how create jpa repository
+4) how to connect to database in spring boot.
+5) difference between delete, drop and truncate.
+6) what is index in Mysql
+7) explain the types of joins.
+8) what is view?
+9) how to handle rollback in spring boot
+10) what are the AGGREGATE Functions 
+11) what is on delete cascade

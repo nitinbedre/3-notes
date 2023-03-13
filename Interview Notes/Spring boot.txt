@@ -1,0 +1,224 @@
+
+SPRING BOOT: 
+ExecutorService: 
+    ==> The ExecutorService implements the Thread Pool design pattern and takes care of the thread management.
+    ==> it adds some very useful features like thread reusability and task queues.
+    ==> The Java ExecutorService is the interface which allows us to execute tasks on threads asynchronously
+    ==> Executors implements ExecutorService.
+    ==> create threads using Executors.newFixedThreadPool(threads_count); 
+
+Without Thread time taken by API: 
+ time 588
+ time 478
+ time 468
+ Total time 1534
+
+With Thread time taken by API: 
+ time 588
+ time 478
+ time 468
+ Total time 1534
+
+@Bean: Spring @Bean Annotation is applied on a method to specify that it returns a bean to be managed by Spring context
+
+=====================================================================================================================================
+
+Logging:
+    => When using starters, Logback is used for logging by default.
+
+log4j:
+
+    Logger object: create Logger object in a class where you need to log messages.
+    Appender: it tells where to store log messages.
+        --> Console Appender: print log message on console.
+        --> File Appender: store log message in a ___.log file.
+        --> JDBC Appender: store log message in a database.
+        --> FTP Appender: send log messages to another server.
+        --> SMTP Appender: send messages to email.
+    Layout: It indicate message format that should be printed on Appender.
+        --> simple layout: 
+        --> html layout:
+        --> xml layout: 
+        --> pattern layout:
+
+    Priority            Priority Name           Method 
+        1                   DEBUG               debug(msg)  ==> it will print 
+        2                   INFO                info(msg)
+        3                   WARN                warn(msg)
+        4                   ERROR               error(msg)
+        5                   FATAL
+
+
+steps: 
+    1) add dependancy in pom.xml
+
+    2) make log4j.properties OR xml file in resources folder.
+    3) RollingAppender: date time and size based logging. 
+
+
+Docker: 
+
+    ==> our application is working fine in windows O.S, may or may not work on another O.S like linux or unix.
+    ==> to overcome this scenario we need to use virtual platform to run application anywhere.
+    ==> Docker: its platform or virtual o.s 
+        --> its makes application complete o.s independant.
+        --> it convert application in images(code+JAR's)
+        --> it create images for database, code, JAR's, MySql and run all images in Docker container.
+        --> Push Docker image into docker hub.
+
+    Steps:
+        1) create account at Docker Hub. 
+        2) write on spring boot app.
+        3) create Docker file in our spring boot application. FROM, Volume, expose, entry points
+        4) download and install Docker S/W in our machine.
+        5) start Docker S/W and run Docker command.
+            a) creating images.
+            b) run images as container.
+            c) login to docker hub,
+            d) Push or Pull with docker hub.
+
+        NOTE: on sign in to docker hub. just create repository like git hub and pull OR push.
+
+    CI/CD: 
+        ==> integrate jenkins with git.
+        ==> jenkins will take code from git based on configuration.
+        ==> jenkins will sent code to docker or simillar to docker application to create images
+            git   --> jenkins   -->  Docker.
+            <--CI-------->|<-----CD---->
+        ==> git --> jenkins(Pull code from github and create)
+
+JUNIT: 
+
+==> JUnit is a unit testing framework for Java programming language.
+==> Annotations:
+    1) @Test
+    2) @Priority()
+    3) @BeforeEach
+    4) @BeforeAll
+    5) @AfterEach
+    6) @AfterAll
+    
+unit testing: testing single module/block of code/ task / part of application.
+
+Assert API: 
+    ==> assert api used to confirm test is passed or not, with the help of some assertion methods.
+    ==> one expected value will be comparaed with actual value.
+
+    1) assertEquals(expectedData, actualData): is
+    2) assertNull(object): true if object is null.
+    3) assertNotNull(object):
+    4) assertDoesNotThrow(Excutable):
+    5) assertSame(expectedObject, actualObject): 
+
+
+
+    JPA:
+
+    1) Pagable: page: 0
+                size: 50
+                sort: id,desc
+
+    2) FindByOrderBySeatNumber(): to sort by seat number.
+
+    3) @Transactional: if any exception occured in a method, previous operations will be revoked already. if not record will be stored in database.
+
+JWT Authentication:
+    1) get Username and password from request.
+    2) validate using : authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+    3) get user details : call service where we implemented UserDetailsService.
+    4) pass user details to create token : 
+    5) create JwtFilter component implement OncePerRequestFilter
+    6) doFilterInternal: 
+
+
+
+Design patterns:
+
+Bean Scopes in Spring : 
+    Bean Scopes refers to the lifecycle of Bean that means when the object of Bean will be instantiated
+    
+    there are 5 types of the bean scopes:
+    1) singlton : only one object will be created.
+    2) Prototype: new object created for bean on every object request.
+    3) request: new bean created for every HTTP request.
+    
+    Singleton class:
+
+    class Test {
+        public static Test singleInstance = null;
+
+        private Test() { // it will restrict object creation using new keyword
+
+        }
+        public static Test getInstance() {
+            if(singleInstance == null) {
+                singleInstance = new Test();
+            }
+            return singleInstance;
+        }
+    }
+
+    
+SPRING BOOT EXCEPTION HANDLING: https://www.tutorialspoint.com/spring_boot/spring_boot_exception_handling.htm
+    ==> The @ControllerAdvice is an annotation, to handle the exceptions globally.
+    ==> @ExceptionHandler is an annotation used to handle the specific exceptions and sending the custom responses to the client.
+
+create one class that will extend to runtimeexception
+package com.tutorialspoint.demo.exception;
+
+public class ProductNotfoundException extends RuntimeException {
+   private static final long serialVersionUID = 1L;
+}
+
+package com.tutorialspoint.demo.exception;
+public class ProductNotfoundException extends RuntimeException {
+   private static final long serialVersionUID = 1L;
+}
+
+@ControllerAdvice
+public class ProductExceptionController {
+   @ExceptionHandler(value = ProductNotfoundException.class)
+   public ResponseEntity<Object> exception(ProductNotfoundException exception) {
+      return new ResponseEntity<>("Product not found", HttpStatus.NOT_FOUND);
+   }
+}
+
+SPRING BOOT AOP:
+
+    to write additional services out of the bussiness logic we use AOP.
+
+Aspect is class that provides additional services.
+   ==>  we call these services as a advices
+   ==> method available inside aspect class are called as advice.
+   ==> 
+
+1) Aspect:
+2) Advice:
+3) Pointcut:
+4) joinPoint: 
+5) Target:
+6) weaving:
+
+
+1) what is difference between @component and @Bean
+2) how to implement ExecutorService
+3) what is difference between @controller and @restController
+4) what is CORS 
+5) what are the annotation used in project 
+6) what is generic
+7) what is ResponseEntity
+8) what is ResponseBody? ==> @ResponseBody annotation tells a controller that the object returned is automatically serialized into JSON and passed back into the HttpResponse object
+9) what is serialization and deserialization. how to make my class as serializable.
+10) how to handle exception in spring boot.
+11) how to use spring boot JPA 
+12) what are the bean scopes in Spring boot : singleton, request, prototype
+13) what is actuator 
+14) what are the error codes: 401, 500, 403
+15) what is difference between authentication and authorization.
+16) explain end to end flow of request.
+17) what is the difference between put and patch 
+17) explain spring security. JWT or Outh.
+18) explain authentication interfaces in spring boot.
+19) what is @SpringBootApplication 
+20) 
+

@@ -1,0 +1,103 @@
+microservices:
+    ==> microservices is architecture where application is loosly coupled services that can independently deployed, developed and maintained. each service is prefered as microservice. earch service perform unique function.
+    ==> polygot architecture is supported. multiple microservice can be designed in the different technologies with different databases.
+    ==> 
+
+1) Discovery client 
+2) 
+Creating Microservices Using Eureka Server(Discovery Server)
+
+Steps to create Eureka Server: Eureka server is only to discover client(microservice). 
+
+    1) create Spring boot application
+    2) add dependancies: Eureka Server, Spring Web, Devtools
+    3) create server by adding @EnableEurekaServer 
+    4) set properties in application.properties
+        1) eureka.client.register-with-eureka = false;
+        2) eureka.client.fetch-registry = false;
+        3) server.port = PORT_NUMBER
+        4) spring.application.name = APPLICATION_NAME
+
+
+Steps to create Eureka Client: 
+
+    1) create spring boot application 
+    2) add dependancies: 1) spring web 2) Eureka Client 3) dev-tools
+    3) create Eureka server by adding @EnableEurekaClient
+    4) set properties in application.properties:
+        ==> eureka.client.register-with-eureka = true
+        ==> eureka.client.fetch-registry = true
+        ==> eureka.client.service-url.defaultZone = EUREKA_SERVER_URL
+        ==> eureka.instance.hostname = HOSTNAME
+        ==> server.port = SERVICE_PORT_NUMBER
+        ==> spring.application.name = SERVICE_NAME   
+
+    
+
+What Is Load Balancing?
+==> load Balancing is distributing traffic among different instances in same application.
+
+There are many algorithms when it comes to load balancing:
+
+    ==> Random selection: Choosing an instance randomly
+    ==> Round-robin: Choosing an instance in the same order each time
+    ==> Least connections: Choosing the instance with the fewest current connections
+    ==> Weighted metric: Using a weighted metric to choose the best instance (for example, CPU or memory usage)
+    ==> IP hash: Using the hash of the client IP to map to an instance
+
+two types of load balancing: server side load balancing and client side load balancing.
+
+1) Server side load Balancing: 
+    ==> traffic is distributed using a load distributor that is placed in front of the servers
+
+2) Client Side Load Balancing: 
+    ==> client API is expected to know all the instances of server API addresses that are available hard-coded within a service registry.
+
+API GATEWAY:
+    ==> Every request goes through API gateway, so Just give IP address or API gateway to user and with help of passed route it will request specific microservice
+        to Discovery Server and based on load balancing criterias Discovery server send call in specific instance by microservice name.
+    ==> we can write common logic in API gatway like: security, logging etc 
+    
+    there are different gateway implemetation:
+    1) NetFlix API gateway(Zuul): MOSTLY USED...
+    2) Amazon API gateway
+    3) Azure API gateway
+    4) Spirng cloud gateway.
+
+    API GATEWAY is one of the eureka server client. its like new microservice
+    route: define route for microservice.
+    predicate: matching criterias for http request.
+    filter: filter for every request. so we can perform additional actions on every request.
+
+    application.properties (GATEWAY Microservice)
+    1) register with eureka server
+    2) define log levels and other properties.
+    integrating microservice route:
+        ==> id to register microservice with : spring.cloud.gatway.routes[0].id = microservice name 
+        ==> url to microservice will get call when predicate get matched: spring.cloud.gatway[0].uri = http://product-service  clientside LB: lb://product-service
+        ==> predicate: to match path and call url --> spring.cloud.gatway[0].predicate = Path = /api/product
+    repeat 3,4,5 to integrate another microservice
+
+Fault Tolerence: 
+    ==> it is the property that allows to procceed when other services are down.(if any service is down it will return response without that service)
+    ==> implement Circuit Breaker Design Pattern: rest controller is wrapped with proxy class and it monitor all the calls internally.
+
+    steps: 
+    1) add hystricks dependancy in pom of your microservice.
+    2) go main class where main method is defined. and use @EnableCircuitBreakder
+    3) go to Method where we are calling another microservice. 
+        --> use @hystrickCommand(fallbackMethod="method_name_without_down_service_login")
+            ex:  @hystrickCommand(fallbackMethod="handlePaymentMicroserviceDownTime")
+            handlePaymentMicroserviceDownTime() {
+                // logic without down microservice.
+            }
+
+
+Q.1) Synchronous communication between microservices?
+Q.2) Asynchronous communication between microservices? ==> Appache Kafka, RabbitMQ, Appache ActiveMQ are used in Asynchronous communication.
+Q.3) what is difference between Monolothic, SOA, Microservices architecture.
+    SOA: 
+Q.4) Logging, Security in API gateway
+Q.5) Apache Kafka implemenation.
+Q.6) Microservices deployment AWS.
+

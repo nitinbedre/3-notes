@@ -1,0 +1,8 @@
+CI & CD: Continuous Integration and Continuous Deployment
+
+1) Developer --> git hub --> jenkins --> deployment  --> cloud(AWS)
+
+2) Developer --> git hub --> aws code build(aws codepipeline) --> deployment  --> Elastic BeanStack
+                            code pipeline -> create pipeline
+
+Q.1) 

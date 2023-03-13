@@ -1,0 +1,15 @@
+.box-modal {
+    padding: 20px;
+    border: 1px solid red;
+    margin: 10px;
+    width: 200px;
+    height: 100px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: yellow;
+}
